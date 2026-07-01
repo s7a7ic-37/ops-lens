@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "opslens",
+  "account_id": "671415c7ecfa0bd6ad7e3ae53b1fab88",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": { "directory": "./web" }
+}

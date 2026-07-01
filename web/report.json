@@ -1,0 +1,5249 @@
+{
+  "generated_at": "2026-10-30T14:04:45.110453+00:00",
+  "dataset": {
+    "country": "United Kingdom",
+    "currency": "GBP",
+    "from": "2010-12-01",
+    "through": "2011-12-08",
+    "excluded_final_date": "2011-12-09",
+    "cohort_selection_through": "2011-10-13",
+    "validation_from": "2011-10-14",
+    "validation_through": "2011-11-10",
+    "holdout_from": "2011-11-11",
+    "holdout_through": "2011-12-08"
+  },
+  "quality": {
+    "input_rows": 541909,
+    "outside_country": 46431,
+    "final_date_rows": 1452,
+    "scoped_rows": 494026,
+    "row_types": {
+      "order": 482528,
+      "cancellation": 7357,
+      "negative_adjustment": 0,
+      "cancellation_mismatch": 0,
+      "non_product": 1642,
+      "invalid": 2499
+    },
+    "duplicate_candidates_retained": 5171
+  },
+  "summary": {
+    "ordered_units": 4563689,
+    "cancelled_units": 177070,
+    "gross_order_value": 8553676.45,
+    "cancellation_value": 277279.0,
+    "active_products": 3784,
+    "forecast_products": 8,
+    "ml_selected_products": 5,
+    "holdout": {
+      "hist_gradient_boosting": {
+        "mae": 103.651,
+        "wape": 71.26
+      },
+      "best_simple": {
+        "mae": 135.719,
+        "wape": 93.31
+      },
+      "selected": {
+        "mae": 107.642,
+        "wape": 74.0
+      }
+    }
+  },
+  "weekly": [
+    {
+      "week": "2010-11-29",
+      "ordered": 80589,
+      "cancelled": 10771
+    },
+    {
+      "week": "2010-12-06",
+      "ordered": 108703,
+      "cancelled": 1865
+    },
+    {
+      "week": "2010-12-13",
+      "ordered": 96172,
+      "cancelled": 1736
+    },
+    {
+      "week": "2010-12-20",
+      "ordered": 28428,
+      "cancelled": 675
+    },
+    {
+      "week": "2011-01-03",
+      "ordered": 65920,
+      "cancelled": 1372
+    },
+    {
+      "week": "2011-01-10",
+      "ordered": 66389,
+      "cancelled": 552
+    },
+    {
+      "week": "2011-01-17",
+      "ordered": 123582,
+      "cancelled": 74719
+    },
+    {
+      "week": "2011-01-24",
+      "ordered": 49316,
+      "cancelled": 1827
+    },
+    {
+      "week": "2011-01-31",
+      "ordered": 62225,
+      "cancelled": 1060
+    },
+    {
+      "week": "2011-02-07",
+      "ordered": 44149,
+      "cancelled": 971
+    },
+    {
+      "week": "2011-02-14",
+      "ordered": 61840,
+      "cancelled": 285
+    },
+    {
+      "week": "2011-02-21",
+      "ordered": 63813,
+      "cancelled": 198
+    },
+    {
+      "week": "2011-02-28",
+      "ordered": 50483,
+      "cancelled": 193
+    },
+    {
+      "week": "2011-03-07",
+      "ordered": 59357,
+      "cancelled": 570
+    },
+    {
+      "week": "2011-03-14",
+      "ordered": 73960,
+      "cancelled": 884
+    },
+    {
+      "week": "2011-03-21",
+      "ordered": 68578,
+      "cancelled": 1185
+    },
+    {
+      "week": "2011-03-28",
+      "ordered": 83882,
+      "cancelled": 1689
+    },
+    {
+      "week": "2011-04-04",
+      "ordered": 56787,
+      "cancelled": 728
+    },
+    {
+      "week": "2011-04-11",
+      "ordered": 81047,
+      "cancelled": 1169
+    },
+    {
+      "week": "2011-04-18",
+      "ordered": 69934,
+      "cancelled": 9354
+    },
+    {
+      "week": "2011-04-25",
+      "ordered": 48547,
+      "cancelled": 585
+    },
+    {
+      "week": "2011-05-02",
+      "ordered": 68840,
+      "cancelled": 464
+    },
+    {
+      "week": "2011-05-09",
+      "ordered": 78384,
+      "cancelled": 2046
+    },
+    {
+      "week": "2011-05-16",
+      "ordered": 89294,
+      "cancelled": 674
+    },
+    {
+      "week": "2011-05-23",
+      "ordered": 71925,
+      "cancelled": 563
+    },
+    {
+      "week": "2011-05-30",
+      "ordered": 48293,
+      "cancelled": 518
+    },
+    {
+      "week": "2011-06-06",
+      "ordered": 83591,
+      "cancelled": 710
+    },
+    {
+      "week": "2011-06-13",
+      "ordered": 72345,
+      "cancelled": 2565
+    },
+    {
+      "week": "2011-06-20",
+      "ordered": 61247,
+      "cancelled": 1710
+    },
+    {
+      "week": "2011-06-27",
+      "ordered": 58940,
+      "cancelled": 1359
+    },
+    {
+      "week": "2011-07-04",
+      "ordered": 81874,
+      "cancelled": 1361
+    },
+    {
+      "week": "2011-07-11",
+      "ordered": 67005,
+      "cancelled": 1014
+    },
+    {
+      "week": "2011-07-18",
+      "ordered": 91469,
+      "cancelled": 2253
+    },
+    {
+      "week": "2011-07-25",
+      "ordered": 84441,
+      "cancelled": 485
+    },
+    {
+      "week": "2011-08-01",
+      "ordered": 90474,
+      "cancelled": 1031
+    },
+    {
+      "week": "2011-08-08",
+      "ordered": 67139,
+      "cancelled": 521
+    },
+    {
+      "week": "2011-08-15",
+      "ordered": 75260,
+      "cancelled": 2403
+    },
+    {
+      "week": "2011-08-22",
+      "ordered": 80289,
+      "cancelled": 722
+    },
+    {
+      "week": "2011-08-29",
+      "ordered": 65604,
+      "cancelled": 4167
+    },
+    {
+      "week": "2011-09-05",
+      "ordered": 89958,
+      "cancelled": 677
+    },
+    {
+      "week": "2011-09-12",
+      "ordered": 107145,
+      "cancelled": 695
+    },
+    {
+      "week": "2011-09-19",
+      "ordered": 135001,
+      "cancelled": 3033
+    },
+    {
+      "week": "2011-09-26",
+      "ordered": 108628,
+      "cancelled": 2104
+    },
+    {
+      "week": "2011-10-03",
+      "ordered": 148450,
+      "cancelled": 5761
+    },
+    {
+      "week": "2011-10-10",
+      "ordered": 96832,
+      "cancelled": 9214
+    },
+    {
+      "week": "2011-10-17",
+      "ordered": 103879,
+      "cancelled": 916
+    },
+    {
+      "week": "2011-10-24",
+      "ordered": 127477,
+      "cancelled": 5041
+    },
+    {
+      "week": "2011-10-31",
+      "ordered": 141349,
+      "cancelled": 1655
+    },
+    {
+      "week": "2011-11-07",
+      "ordered": 160233,
+      "cancelled": 3722
+    },
+    {
+      "week": "2011-11-14",
+      "ordered": 157529,
+      "cancelled": 1893
+    },
+    {
+      "week": "2011-11-21",
+      "ordered": 134267,
+      "cancelled": 2937
+    },
+    {
+      "week": "2011-11-28",
+      "ordered": 139433,
+      "cancelled": 864
+    },
+    {
+      "week": "2011-12-05",
+      "ordered": 133393,
+      "cancelled": 1604
+    }
+  ],
+  "watchlist": [
+    {
+      "sku": "84347",
+      "name": "ROTATING SILVER ANGELS T-LIGHT HLDR",
+      "ordered": 8985,
+      "cancelled": 9370,
+      "cancellation_ratio": 104.3
+    },
+    {
+      "sku": "23166",
+      "name": "MEDIUM CERAMIC TOP STORAGE JAR",
+      "ordered": 77034,
+      "cancelled": 74467,
+      "cancellation_ratio": 96.7
+    },
+    {
+      "sku": "23113",
+      "name": "PANTRY CHOPPING BOARD",
+      "ordered": 1063,
+      "cancelled": 946,
+      "cancellation_ratio": 89.0
+    },
+    {
+      "sku": "23055",
+      "name": "IVORY CHANDELIER T-LIGHT HOLDER",
+      "ordered": 603,
+      "cancelled": 384,
+      "cancellation_ratio": 63.7
+    },
+    {
+      "sku": "47566B",
+      "name": "TEA TIME PARTY BUNTING",
+      "ordered": 2408,
+      "cancelled": 1424,
+      "cancellation_ratio": 59.1
+    },
+    {
+      "sku": "23056",
+      "name": "FLOWERS CHANDELIER T-LIGHT HOLDER",
+      "ordered": 909,
+      "cancelled": 531,
+      "cancellation_ratio": 58.4
+    },
+    {
+      "sku": "23057",
+      "name": "BEADED CHANDELIER T-LIGHT HOLDER",
+      "ordered": 700,
+      "cancelled": 385,
+      "cancellation_ratio": 55.0
+    },
+    {
+      "sku": "22920",
+      "name": "HERB MARKER BASIL",
+      "ordered": 3162,
+      "cancelled": 1527,
+      "cancellation_ratio": 48.3
+    },
+    {
+      "sku": "21439",
+      "name": "BASKET OF TOADSTOOLS",
+      "ordered": 853,
+      "cancelled": 408,
+      "cancellation_ratio": 47.8
+    },
+    {
+      "sku": "18097C",
+      "name": "WHITE TALL PORCELAIN T-LIGHT HOLDER",
+      "ordered": 646,
+      "cancelled": 292,
+      "cancellation_ratio": 45.2
+    }
+  ],
+  "products": [
+    {
+      "sku": "23166",
+      "name": "MEDIUM CERAMIC TOP STORAGE JAR",
+      "selected_method": "weekday_mean_4w",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 8.711,
+          "wape": 156.35
+        },
+        "seasonal_naive": {
+          "mae": 9.0,
+          "wape": 161.54
+        },
+        "weekday_mean_4w": {
+          "mae": 7.902,
+          "wape": 141.83
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 24.817,
+          "wape": 97.32
+        },
+        "seasonal_naive": {
+          "mae": 37.321,
+          "wape": 146.36
+        },
+        "weekday_mean_4w": {
+          "mae": 25.545,
+          "wape": 100.18
+        }
+      },
+      "validation_error_radius": 12.55,
+      "holdout_range_coverage": 60.7,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 15.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 52.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 55.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 29.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 52.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 13.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 17.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 5.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 22.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 4.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 9.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 58.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 3.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 10.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 264.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 13.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 25.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 5.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 117.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 5.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 58.0,
+          "model": 22.31,
+          "baseline": 6.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 12.7,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 0.0,
+          "model": 5.2,
+          "baseline": 6.25
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 1.0,
+          "model": 12.31,
+          "baseline": 10.25
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 3.0,
+          "model": 12.09,
+          "baseline": 8.25
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 10.0,
+          "model": 9.08,
+          "baseline": 1.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 6.0,
+          "model": 7.97,
+          "baseline": 7.25
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 16.0,
+          "model": 18.77,
+          "baseline": 20.5
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 3.34,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 0.0,
+          "model": 5.19,
+          "baseline": 6.25
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 264.0,
+          "model": 12.44,
+          "baseline": 7.25
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 96.0,
+          "model": 10.83,
+          "baseline": 4.75
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 0.0,
+          "model": 10.56,
+          "baseline": 3.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 48.0,
+          "model": 11.73,
+          "baseline": 2.75
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 6.0,
+          "model": 26.2,
+          "baseline": 24.5
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 9.28,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0,
+          "model": 11.55,
+          "baseline": 6.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 16.0,
+          "model": 49.38,
+          "baseline": 68.75
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 12.0,
+          "model": 18.01,
+          "baseline": 27.25
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 13.0,
+          "model": 10.47,
+          "baseline": 3.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 25.0,
+          "model": 28.04,
+          "baseline": 13.5
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 5.0,
+          "model": 9.16,
+          "baseline": 26.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 3.91,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0,
+          "model": 4.74,
+          "baseline": 2.5
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 117.0,
+          "model": 14.57,
+          "baseline": 71.25
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 5.0,
+          "model": 14.86,
+          "baseline": 30.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 2.0,
+          "model": 14.82,
+          "baseline": 6.25
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3.0,
+          "model": 10.21,
+          "baseline": 19.75
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 21.25,
+          "model": 7.99,
+          "baseline": 21.25,
+          "lower": 8.7,
+          "upper": 33.8
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 0.0,
+          "model": 3.2,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 12.55
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 2.0,
+          "model": 3.2,
+          "baseline": 2.0,
+          "lower": 0,
+          "upper": 14.55
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 99.5,
+          "model": 17.48,
+          "baseline": 99.5,
+          "lower": 86.95,
+          "upper": 112.05
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 29.0,
+          "model": 15.66,
+          "baseline": 29.0,
+          "lower": 16.45,
+          "upper": 41.55
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 6.25,
+          "model": 8.69,
+          "baseline": 6.25,
+          "lower": 0,
+          "upper": 18.8
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 20.5,
+          "model": 9.76,
+          "baseline": 20.5,
+          "lower": 7.95,
+          "upper": 33.05
+        }
+      ]
+    },
+    {
+      "sku": "84077",
+      "name": "WORLD WAR 2 GLIDERS ASSTD DESIGNS",
+      "selected_method": "hist_gradient_boosting",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 256.704,
+          "wape": 87.72
+        },
+        "seasonal_naive": {
+          "mae": 439.679,
+          "wape": 150.24
+        },
+        "weekday_mean_4w": {
+          "mae": 327.571,
+          "wape": 111.94
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 88.057,
+          "wape": 66.42
+        },
+        "seasonal_naive": {
+          "mae": 88.893,
+          "wape": 67.05
+        },
+        "weekday_mean_4w": {
+          "mae": 146.071,
+          "wape": 110.18
+        }
+      },
+      "validation_error_radius": 122.1,
+      "holdout_range_coverage": 71.4,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 192.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 11.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 240.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 53.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 184.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 195.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 151.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 118.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 384.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 240.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 196.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 97.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 101.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 63.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 192.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 192.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 432.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 240.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 4848.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 62.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 288.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 240.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 288.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 384.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 245.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 202.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 52.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 101.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 293.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 148.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 348.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 97.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 257.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 19.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 50.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 58.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 241.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 198.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 205.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 243.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 192.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 336.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 202.0,
+          "model": 205.09,
+          "baseline": 180.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 4.31,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 144.0,
+          "model": 36.16,
+          "baseline": 84.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 52.0,
+          "model": 103.69,
+          "baseline": 91.25
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 101.0,
+          "model": 316.82,
+          "baseline": 120.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 293.0,
+          "model": 85.69,
+          "baseline": 192.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 144.0,
+          "model": 57.87,
+          "baseline": 1381.25
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 148.0,
+          "model": 131.35,
+          "baseline": 230.5
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 8.51,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 96.0,
+          "model": 65.33,
+          "baseline": 84.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 348.0,
+          "model": 84.98,
+          "baseline": 88.5
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 97.0,
+          "model": 170.78,
+          "baseline": 133.25
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 257.0,
+          "model": 116.86,
+          "baseline": 217.25
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 19.0,
+          "model": 403.95,
+          "baseline": 1369.25
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 50.0,
+          "model": 67.23,
+          "baseline": 159.5
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 5.22,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 96.0,
+          "model": 29.94,
+          "baseline": 96.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 58.0,
+          "model": 119.52,
+          "baseline": 115.5
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 96.0,
+          "model": 76.4,
+          "baseline": 145.5
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 241.0,
+          "model": 92.23,
+          "baseline": 245.5
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 198.0,
+          "model": 132.41,
+          "baseline": 162.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 96.0,
+          "model": 123.3,
+          "baseline": 172.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 5.9,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0,
+          "model": 50.42,
+          "baseline": 108.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 205.0,
+          "model": 69.4,
+          "baseline": 114.5
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 243.0,
+          "model": 58.38,
+          "baseline": 169.5
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 192.0,
+          "model": 153.57,
+          "baseline": 233.75
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 336.0,
+          "model": 381.42,
+          "baseline": 151.5
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 61.75,
+          "model": 61.75,
+          "baseline": 124.0,
+          "lower": 0,
+          "upper": 183.86
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 4.28,
+          "model": 4.28,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 126.39
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 46.96,
+          "model": 46.96,
+          "baseline": 84.0,
+          "lower": 0,
+          "upper": 169.06
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 185.01,
+          "model": 185.01,
+          "baseline": 165.75,
+          "lower": 62.91,
+          "upper": 307.11
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 110.28,
+          "model": 110.28,
+          "baseline": 134.25,
+          "lower": 0,
+          "upper": 232.38
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 184.01,
+          "model": 184.01,
+          "baseline": 245.75,
+          "lower": 61.9,
+          "upper": 306.11
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 134.17,
+          "model": 134.17,
+          "baseline": 174.25,
+          "lower": 12.07,
+          "upper": 256.27
+        }
+      ]
+    },
+    {
+      "sku": "85099B",
+      "name": "JUMBO BAG RED RETROSPOT",
+      "selected_method": "hist_gradient_boosting",
+      "baseline_method": "seasonal_naive",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 133.487,
+          "wape": 85.39
+        },
+        "seasonal_naive": {
+          "mae": 138.821,
+          "wape": 88.81
+        },
+        "weekday_mean_4w": {
+          "mae": 162.018,
+          "wape": 103.64
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 100.909,
+          "wape": 74.95
+        },
+        "seasonal_naive": {
+          "mae": 153.75,
+          "wape": 114.19
+        },
+        "weekday_mean_4w": {
+          "mae": 132.188,
+          "wape": 98.18
+        }
+      },
+      "validation_error_radius": 187.2,
+      "holdout_range_coverage": 82.1,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 119.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 227.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 283.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 150.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 419.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 248.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 226.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 61.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 220.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 164.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 71.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 362.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 66.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 67.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 351.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 1533.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 623.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 22.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 62.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 348.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 234.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 137.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 409.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 102.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 54.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 131.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 22.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 7.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 287.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 161.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 41.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 41.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 95.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 84.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 452.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 58.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 110.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 146.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 149.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 725.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 1064.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 640.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 380.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 296.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 97.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 62.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 87.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 147.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 122.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 146.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 229.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 55.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 42.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 164.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 189.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 129.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 483.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 66.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 135.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 89.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 106.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 28.0,
+          "model": 307.61,
+          "baseline": 58.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 3.15,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0,
+          "model": 56.97,
+          "baseline": 110.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 640.0,
+          "model": 172.49,
+          "baseline": 146.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 380.0,
+          "model": 226.89,
+          "baseline": 149.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 296.0,
+          "model": 439.84,
+          "baseline": 725.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 97.0,
+          "model": 335.64,
+          "baseline": 1064.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 62.0,
+          "model": 67.86,
+          "baseline": 28.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 2.72,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 87.0,
+          "model": 19.0,
+          "baseline": 48.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 147.0,
+          "model": 187.57,
+          "baseline": 640.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 122.0,
+          "model": 217.84,
+          "baseline": 380.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 146.0,
+          "model": 142.22,
+          "baseline": 296.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 229.0,
+          "model": 70.26,
+          "baseline": 97.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 55.0,
+          "model": 105.97,
+          "baseline": 62.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 2.41,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 28.0,
+          "model": 81.48,
+          "baseline": 87.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 42.0,
+          "model": 143.53,
+          "baseline": 147.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 164.0,
+          "model": 112.16,
+          "baseline": 122.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 189.0,
+          "model": 78.53,
+          "baseline": 146.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 129.0,
+          "model": 134.07,
+          "baseline": 229.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 483.0,
+          "model": 70.85,
+          "baseline": 55.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 2.47,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 2.0,
+          "model": 51.08,
+          "baseline": 28.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 66.0,
+          "model": 83.47,
+          "baseline": 42.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 135.0,
+          "model": 92.47,
+          "baseline": 164.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 89.0,
+          "model": 132.25,
+          "baseline": 189.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 106.0,
+          "model": 318.39,
+          "baseline": 129.0
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 157.05,
+          "model": 157.05,
+          "baseline": 483.0,
+          "lower": 0,
+          "upper": 344.25
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 5.92,
+          "model": 5.92,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 193.12
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 77.83,
+          "model": 77.83,
+          "baseline": 2.0,
+          "lower": 0,
+          "upper": 265.04
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 261.0,
+          "model": 261.0,
+          "baseline": 66.0,
+          "lower": 73.8,
+          "upper": 448.2
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 368.08,
+          "model": 368.08,
+          "baseline": 135.0,
+          "lower": 180.88,
+          "upper": 555.28
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 416.82,
+          "model": 416.82,
+          "baseline": 89.0,
+          "lower": 229.62,
+          "upper": 604.03
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 381.97,
+          "model": 381.97,
+          "baseline": 106.0,
+          "lower": 194.76,
+          "upper": 569.17
+        }
+      ]
+    },
+    {
+      "sku": "22197",
+      "name": "POPCORN HOLDER",
+      "selected_method": "hist_gradient_boosting",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 243.626,
+          "wape": 83.91
+        },
+        "seasonal_naive": {
+          "mae": 318.321,
+          "wape": 109.63
+        },
+        "weekday_mean_4w": {
+          "mae": 268.893,
+          "wape": 92.61
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 327.12,
+          "wape": 67.63
+        },
+        "seasonal_naive": {
+          "mae": 370.857,
+          "wape": 76.67
+        },
+        "weekday_mean_4w": {
+          "mae": 391.438,
+          "wape": 80.93
+        }
+      },
+      "validation_error_radius": 225.79,
+      "holdout_range_coverage": 67.9,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 134.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 174.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 181.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 119.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 25.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 63.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 27.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 85.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 143.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 284.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 1085.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 39.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 76.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 147.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 38.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 377.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 35.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 126.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 159.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 124.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 174.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 133.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 152.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 6.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 34.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 282.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 247.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 26.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 232.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 251.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 43.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 47.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 2065.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 137.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 198.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 238.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 172.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 120.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 294.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 2012.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 148.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 1079.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 315.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 160.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 114.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 1767.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 224.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 352.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 123.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 449.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 206.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 349.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 1162.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 397.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 558.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 342.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 47.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 236.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 796.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 370.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 279.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 1369.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 113.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 410.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 337.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 272.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3111.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 160.0,
+          "model": 140.18,
+          "baseline": 590.75
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 8.16,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 114.0,
+          "model": 290.63,
+          "baseline": 112.25
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 1767.0,
+          "model": 352.33,
+          "baseline": 619.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 224.0,
+          "model": 157.9,
+          "baseline": 229.75
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 352.0,
+          "model": 363.86,
+          "baseline": 385.25
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 123.0,
+          "model": 297.02,
+          "baseline": 95.5
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 449.0,
+          "model": 508.34,
+          "baseline": 592.75
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 6.07,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 206.0,
+          "model": 54.57,
+          "baseline": 139.25
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 349.0,
+          "model": 244.51,
+          "baseline": 1052.25
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 1162.0,
+          "model": 699.38,
+          "baseline": 215.25
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 397.0,
+          "model": 199.95,
+          "baseline": 411.5
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 558.0,
+          "model": 126.27,
+          "baseline": 123.25
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 342.0,
+          "model": 990.34,
+          "baseline": 698.5
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 4.74,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 47.0,
+          "model": 273.0,
+          "baseline": 187.75
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 236.0,
+          "model": 336.88,
+          "baseline": 1081.5
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 796.0,
+          "model": 767.3,
+          "baseline": 443.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 370.0,
+          "model": 404.26,
+          "baseline": 500.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 279.0,
+          "model": 925.3,
+          "baseline": 251.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 1369.0,
+          "model": 206.46,
+          "baseline": 267.75
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 4.44,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 113.0,
+          "model": 141.26,
+          "baseline": 165.25
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 410.0,
+          "model": 432.86,
+          "baseline": 1091.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 337.0,
+          "model": 286.94,
+          "baseline": 582.5
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 272.0,
+          "model": 524.83,
+          "baseline": 549.5
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3111.0,
+          "model": 445.82,
+          "baseline": 318.75
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 610.94,
+          "model": 610.94,
+          "baseline": 580.0,
+          "lower": 385.16,
+          "upper": 836.73
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 8.36,
+          "model": 8.36,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 234.14
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 111.47,
+          "model": 111.47,
+          "baseline": 120.0,
+          "lower": 0,
+          "upper": 337.26
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 951.73,
+          "model": 951.73,
+          "baseline": 690.5,
+          "lower": 725.94,
+          "upper": 1177.51
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 533.35,
+          "model": 533.35,
+          "baseline": 629.75,
+          "lower": 307.56,
+          "upper": 759.13
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 812.03,
+          "model": 812.03,
+          "baseline": 347.75,
+          "lower": 586.25,
+          "upper": 1037.82
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 605.0,
+          "model": 605.0,
+          "baseline": 1017.75,
+          "lower": 379.21,
+          "upper": 830.78
+        }
+      ]
+    },
+    {
+      "sku": "85123A",
+      "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "selected_method": "hist_gradient_boosting",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 86.267,
+          "wape": 89.1
+        },
+        "seasonal_naive": {
+          "mae": 130.536,
+          "wape": 134.82
+        },
+        "weekday_mean_4w": {
+          "mae": 89.205,
+          "wape": 92.13
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 76.62,
+          "wape": 68.28
+        },
+        "seasonal_naive": {
+          "mae": 87.607,
+          "wape": 78.07
+        },
+        "weekday_mean_4w": {
+          "mae": 94.33,
+          "wape": 84.06
+        }
+      },
+      "validation_error_radius": 72.32,
+      "holdout_range_coverage": 60.7,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 101.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 81.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 42.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 393.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 11.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 26.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 119.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 69.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 21.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 125.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 113.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 21.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 23.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 49.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 13.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 26.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 127.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 19.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 243.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 115.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 55.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 31.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 15.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 13.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 63.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 20.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 117.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 84.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 116.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 152.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 39.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 1265.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 81.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 74.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 34.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 111.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 113.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 71.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 128.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 67.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 374.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 349.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 160.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 90.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 103.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 96.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 36.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 87.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 91.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 111.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 225.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 133.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 117.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 239.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 41.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 117.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 249.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 21.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 177.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 115.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 128.0,
+          "model": 55.72,
+          "baseline": 73.25
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 2.73,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 67.0,
+          "model": 42.41,
+          "baseline": 77.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 374.0,
+          "model": 69.91,
+          "baseline": 58.25
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 349.0,
+          "model": 94.18,
+          "baseline": 45.25
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 160.0,
+          "model": 83.69,
+          "baseline": 56.25
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 90.0,
+          "model": 62.85,
+          "baseline": 367.75
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 103.0,
+          "model": 139.63,
+          "baseline": 76.5
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 7.05,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 96.0,
+          "model": 99.31,
+          "baseline": 80.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 36.0,
+          "model": 106.73,
+          "baseline": 144.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 87.0,
+          "model": 266.73,
+          "baseline": 128.75
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 91.0,
+          "model": 164.49,
+          "baseline": 93.25
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 111.0,
+          "model": 108.9,
+          "baseline": 385.75
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 225.0,
+          "model": 81.43,
+          "baseline": 99.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 3.24,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0,
+          "model": 65.55,
+          "baseline": 88.25
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 133.0,
+          "model": 67.2,
+          "baseline": 149.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 117.0,
+          "model": 168.89,
+          "baseline": 146.5
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 239.0,
+          "model": 107.3,
+          "baseline": 111.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 41.0,
+          "model": 137.69,
+          "baseline": 384.25
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 117.0,
+          "model": 67.79,
+          "baseline": 134.25
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 2.65,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 8.0,
+          "model": 28.56,
+          "baseline": 61.25
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 249.0,
+          "model": 83.89,
+          "baseline": 144.25
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 21.0,
+          "model": 107.04,
+          "baseline": 166.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 177.0,
+          "model": 61.58,
+          "baseline": 150.75
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 115.0,
+          "model": 94.1,
+          "baseline": 78.25
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 155.76,
+          "model": 155.76,
+          "baseline": 143.25,
+          "lower": 83.43,
+          "upper": 228.08
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 4.27,
+          "model": 4.27,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 76.6
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 33.51,
+          "model": 33.51,
+          "baseline": 44.75,
+          "lower": 0,
+          "upper": 105.84
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 75.12,
+          "model": 75.12,
+          "baseline": 198.0,
+          "lower": 2.79,
+          "upper": 147.44
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 88.92,
+          "model": 88.92,
+          "baseline": 143.5,
+          "lower": 16.59,
+          "upper": 161.24
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 119.66,
+          "model": 119.66,
+          "baseline": 166.75,
+          "lower": 47.33,
+          "upper": 191.98
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 116.95,
+          "model": 116.95,
+          "baseline": 89.25,
+          "lower": 44.63,
+          "upper": 189.28
+        }
+      ]
+    },
+    {
+      "sku": "84879",
+      "name": "ASSORTED COLOUR BIRD ORNAMENT",
+      "selected_method": "weekday_mean_4w",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 112.943,
+          "wape": 76.74
+        },
+        "seasonal_naive": {
+          "mae": 121.321,
+          "wape": 82.43
+        },
+        "weekday_mean_4w": {
+          "mae": 101.223,
+          "wape": 68.78
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 87.909,
+          "wape": 64.78
+        },
+        "seasonal_naive": {
+          "mae": 132.571,
+          "wape": 97.68
+        },
+        "weekday_mean_4w": {
+          "mae": 109.205,
+          "wape": 80.47
+        }
+      },
+      "validation_error_radius": 112.1,
+      "holdout_range_coverage": 57.1,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 68.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 64.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 340.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 32.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 89.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 245.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 74.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 224.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 184.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 72.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 84.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 83.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 285.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 9.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 68.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 116.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 72.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 60.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 360.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 134.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 155.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 16.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 59.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 128.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 185.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 264.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 112.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 270.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 128.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 186.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 136.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 1312.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 200.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 100.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 303.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 107.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 137.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 78.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 368.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 109.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 190.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 132.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 275.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 272.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 127.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 112.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 88.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 504.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 66.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 133.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 240.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 256.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 11.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 100.0,
+          "model": 101.96,
+          "baseline": 54.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 2.83,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0,
+          "model": 91.87,
+          "baseline": 129.75
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 303.0,
+          "model": 118.01,
+          "baseline": 156.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 107.0,
+          "model": 101.69,
+          "baseline": 105.5
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 137.0,
+          "model": 193.05,
+          "baseline": 439.75
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 78.0,
+          "model": 190.04,
+          "baseline": 145.25
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 368.0,
+          "model": 94.33,
+          "baseline": 61.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 2.6,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 109.0,
+          "model": 71.37,
+          "baseline": 126.75
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 190.0,
+          "model": 91.79,
+          "baseline": 141.75
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 132.0,
+          "model": 164.74,
+          "baseline": 128.25
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 80.0,
+          "model": 145.39,
+          "baseline": 440.5
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 275.0,
+          "model": 199.18,
+          "baseline": 126.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 272.0,
+          "model": 103.25,
+          "baseline": 149.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 2.53,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 8.0,
+          "model": 72.82,
+          "baseline": 139.25
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 56.0,
+          "model": 171.63,
+          "baseline": 157.25
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 127.0,
+          "model": 99.27,
+          "baseline": 141.25
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 112.0,
+          "model": 154.03,
+          "baseline": 414.25
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 88.0,
+          "model": 180.68,
+          "baseline": 184.75
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 504.0,
+          "model": 189.76,
+          "baseline": 205.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 3.73,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 66.0,
+          "model": 41.68,
+          "baseline": 75.25
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 133.0,
+          "model": 354.63,
+          "baseline": 143.25
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 240.0,
+          "model": 117.68,
+          "baseline": 105.5
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 256.0,
+          "model": 124.75,
+          "baseline": 410.25
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 11.0,
+          "model": 147.69,
+          "baseline": 160.25
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 311.0,
+          "model": 77.03,
+          "baseline": 311.0,
+          "lower": 198.9,
+          "upper": 423.1
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 0.0,
+          "model": 4.68,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 112.1
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 57.75,
+          "model": 61.8,
+          "baseline": 57.75,
+          "lower": 0,
+          "upper": 169.85
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 170.5,
+          "model": 142.59,
+          "baseline": 170.5,
+          "lower": 58.4,
+          "upper": 282.6
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 151.5,
+          "model": 101.37,
+          "baseline": 151.5,
+          "lower": 39.4,
+          "upper": 263.6
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 146.25,
+          "model": 112.53,
+          "baseline": 146.25,
+          "lower": 34.15,
+          "upper": 258.35
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 113.0,
+          "model": 118.56,
+          "baseline": 113.0,
+          "lower": 0.9,
+          "upper": 225.1
+        }
+      ]
+    },
+    {
+      "sku": "21212",
+      "name": "PACK OF 72 RETROSPOT CAKE CASES",
+      "selected_method": "weekday_mean_4w",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 51.116,
+          "wape": 87.06
+        },
+        "seasonal_naive": {
+          "mae": 70.107,
+          "wape": 119.4
+        },
+        "weekday_mean_4w": {
+          "mae": 49.384,
+          "wape": 84.11
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 36.919,
+          "wape": 74.91
+        },
+        "seasonal_naive": {
+          "mae": 36.286,
+          "wape": 73.62
+        },
+        "weekday_mean_4w": {
+          "mae": 46.821,
+          "wape": 95.0
+        }
+      },
+      "validation_error_radius": 61.55,
+      "holdout_range_coverage": 78.6,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 41.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 3.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 50.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 70.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 182.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 32.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 59.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 11.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 65.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 34.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 124.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 49.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 11.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 26.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 83.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 122.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 138.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 33.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 35.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 25.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 25.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 21.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 38.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 8.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 72.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 14.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 37.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 36.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 61.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 244.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 57.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 40.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 28.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 99.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 505.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 56.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 50.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 77.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 66.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 4.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 78.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 38.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 63.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 164.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 62.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 17.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 85.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 58.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 52.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 75.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 82.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 45.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 15.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 36.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 52.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 217.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 5.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 92.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 66.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 50.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 51.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 38.0,
+          "model": 104.16,
+          "baseline": 80.5
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 3.07,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 63.0,
+          "model": 33.1,
+          "baseline": 39.75
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 164.0,
+          "model": 52.11,
+          "baseline": 42.25
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 62.0,
+          "model": 62.31,
+          "baseline": 34.75
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 17.0,
+          "model": 63.31,
+          "baseline": 34.75
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 12.0,
+          "model": 88.04,
+          "baseline": 179.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 85.0,
+          "model": 52.17,
+          "baseline": 84.75
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 3.15,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 58.0,
+          "model": 37.8,
+          "baseline": 49.5
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 52.0,
+          "model": 34.62,
+          "baseline": 73.75
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 75.0,
+          "model": 108.05,
+          "baseline": 48.25
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 82.0,
+          "model": 85.36,
+          "baseline": 39.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 1.0,
+          "model": 100.86,
+          "baseline": 164.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 45.0,
+          "model": 70.36,
+          "baseline": 105.75
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 2.8,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 15.0,
+          "model": 46.61,
+          "baseline": 57.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 36.0,
+          "model": 70.62,
+          "baseline": 83.25
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 52.0,
+          "model": 86.65,
+          "baseline": 57.75
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 217.0,
+          "model": 48.4,
+          "baseline": 50.5
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 5.0,
+          "model": 66.83,
+          "baseline": 149.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 92.0,
+          "model": 54.07,
+          "baseline": 56.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 2.33,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 24.0,
+          "model": 42.81,
+          "baseline": 46.5
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 18.0,
+          "model": 53.2,
+          "baseline": 82.25
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 66.0,
+          "model": 63.1,
+          "baseline": 63.75
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 50.0,
+          "model": 36.96,
+          "baseline": 80.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 51.0,
+          "model": 71.55,
+          "baseline": 24.0
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 65.0,
+          "model": 56.49,
+          "baseline": 65.0,
+          "lower": 3.45,
+          "upper": 126.55
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 0.0,
+          "model": 3.97,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 61.55
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 40.0,
+          "model": 56.48,
+          "baseline": 40.0,
+          "lower": 0,
+          "upper": 101.55
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 67.5,
+          "model": 97.74,
+          "baseline": 67.5,
+          "lower": 5.95,
+          "upper": 129.05
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 63.75,
+          "model": 140.07,
+          "baseline": 63.75,
+          "lower": 2.2,
+          "upper": 125.3
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 91.5,
+          "model": 84.78,
+          "baseline": 91.5,
+          "lower": 29.95,
+          "upper": 153.05
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 17.25,
+          "model": 41.95,
+          "baseline": 17.25,
+          "lower": 0,
+          "upper": 78.8
+        }
+      ]
+    },
+    {
+      "sku": "22616",
+      "name": "PACK OF 12 LONDON TISSUES ",
+      "selected_method": "hist_gradient_boosting",
+      "baseline_method": "weekday_mean_4w",
+      "validation": {
+        "hist_gradient_boosting": {
+          "mae": 55.803,
+          "wape": 88.28
+        },
+        "seasonal_naive": {
+          "mae": 94.321,
+          "wape": 149.21
+        },
+        "weekday_mean_4w": {
+          "mae": 73.366,
+          "wape": 116.06
+        }
+      },
+      "holdout": {
+        "hist_gradient_boosting": {
+          "mae": 86.858,
+          "wape": 96.47
+        },
+        "seasonal_naive": {
+          "mae": 138.036,
+          "wape": 153.31
+        },
+        "weekday_mean_4w": {
+          "mae": 118.589,
+          "wape": 131.71
+        }
+      },
+      "validation_error_radius": 31.73,
+      "holdout_range_coverage": 67.9,
+      "history": [
+        {
+          "date": "2011-09-16",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-09-17",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-18",
+          "actual": 37.0
+        },
+        {
+          "date": "2011-09-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-20",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-21",
+          "actual": 17.0
+        },
+        {
+          "date": "2011-09-22",
+          "actual": 111.0
+        },
+        {
+          "date": "2011-09-23",
+          "actual": 109.0
+        },
+        {
+          "date": "2011-09-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-25",
+          "actual": 30.0
+        },
+        {
+          "date": "2011-09-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-09-27",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-09-28",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-09-29",
+          "actual": 432.0
+        },
+        {
+          "date": "2011-09-30",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-01",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-02",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-03",
+          "actual": 115.0
+        },
+        {
+          "date": "2011-10-04",
+          "actual": 15.0
+        },
+        {
+          "date": "2011-10-05",
+          "actual": 144.0
+        },
+        {
+          "date": "2011-10-06",
+          "actual": 132.0
+        },
+        {
+          "date": "2011-10-07",
+          "actual": 59.0
+        },
+        {
+          "date": "2011-10-08",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-09",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-10",
+          "actual": 15.0
+        },
+        {
+          "date": "2011-10-11",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-13",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-10-14",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-15",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-16",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-17",
+          "actual": 18.0
+        },
+        {
+          "date": "2011-10-18",
+          "actual": 24.0
+        },
+        {
+          "date": "2011-10-19",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-20",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-10-21",
+          "actual": 600.0
+        },
+        {
+          "date": "2011-10-22",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-23",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-24",
+          "actual": 37.0
+        },
+        {
+          "date": "2011-10-25",
+          "actual": 36.0
+        },
+        {
+          "date": "2011-10-26",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-10-27",
+          "actual": 27.0
+        },
+        {
+          "date": "2011-10-28",
+          "actual": 72.0
+        },
+        {
+          "date": "2011-10-29",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-30",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-10-31",
+          "actual": 4.0
+        },
+        {
+          "date": "2011-11-01",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-02",
+          "actual": 37.0
+        },
+        {
+          "date": "2011-11-03",
+          "actual": 553.0
+        },
+        {
+          "date": "2011-11-04",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-05",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-06",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-11-07",
+          "actual": 138.0
+        },
+        {
+          "date": "2011-11-08",
+          "actual": 3.0
+        },
+        {
+          "date": "2011-11-09",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-10",
+          "actual": 64.0
+        },
+        {
+          "date": "2011-11-11",
+          "actual": 1.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 214.0
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 888.0
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 80.0
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 11.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 14.0
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 5.0
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 12.0
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 32.0
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 2.0
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 88.0
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 439.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 51.0
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 22.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 36.0
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 507.0
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 3.0
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 51.0
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3.0
+        }
+      ],
+      "evaluation": [
+        {
+          "date": "2011-11-11",
+          "actual": 1.0,
+          "model": 84.34,
+          "baseline": 183.0
+        },
+        {
+          "date": "2011-11-12",
+          "actual": 0.0,
+          "model": 3.17,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-13",
+          "actual": 48.0,
+          "model": 14.49,
+          "baseline": 6.0
+        },
+        {
+          "date": "2011-11-14",
+          "actual": 214.0,
+          "model": 19.48,
+          "baseline": 49.25
+        },
+        {
+          "date": "2011-11-15",
+          "actual": 888.0,
+          "model": 51.24,
+          "baseline": 27.75
+        },
+        {
+          "date": "2011-11-16",
+          "actual": 80.0,
+          "model": 69.35,
+          "baseline": 12.5
+        },
+        {
+          "date": "2011-11-17",
+          "actual": 11.0,
+          "model": 45.44,
+          "baseline": 164.0
+        },
+        {
+          "date": "2011-11-18",
+          "actual": 12.0,
+          "model": 34.67,
+          "baseline": 180.25
+        },
+        {
+          "date": "2011-11-19",
+          "actual": 0.0,
+          "model": 2.75,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-20",
+          "actual": 2.0,
+          "model": 12.46,
+          "baseline": 15.0
+        },
+        {
+          "date": "2011-11-21",
+          "actual": 14.0,
+          "model": 11.08,
+          "baseline": 98.25
+        },
+        {
+          "date": "2011-11-22",
+          "actual": 5.0,
+          "model": 15.58,
+          "baseline": 243.75
+        },
+        {
+          "date": "2011-11-23",
+          "actual": 12.0,
+          "model": 14.38,
+          "baseline": 29.5
+        },
+        {
+          "date": "2011-11-24",
+          "actual": 0.0,
+          "model": 23.62,
+          "baseline": 163.75
+        },
+        {
+          "date": "2011-11-25",
+          "actual": 32.0,
+          "model": 25.64,
+          "baseline": 33.25
+        },
+        {
+          "date": "2011-11-26",
+          "actual": 0.0,
+          "model": 9.88,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-11-27",
+          "actual": 2.0,
+          "model": 10.63,
+          "baseline": 15.5
+        },
+        {
+          "date": "2011-11-28",
+          "actual": 88.0,
+          "model": 13.14,
+          "baseline": 92.5
+        },
+        {
+          "date": "2011-11-29",
+          "actual": 439.0,
+          "model": 47.92,
+          "baseline": 236.0
+        },
+        {
+          "date": "2011-11-30",
+          "actual": 51.0,
+          "model": 20.99,
+          "baseline": 32.25
+        },
+        {
+          "date": "2011-12-01",
+          "actual": 22.0,
+          "model": 22.55,
+          "baseline": 157.0
+        },
+        {
+          "date": "2011-12-02",
+          "actual": 36.0,
+          "model": 33.27,
+          "baseline": 23.25
+        },
+        {
+          "date": "2011-12-03",
+          "actual": 0.0,
+          "model": 6.0,
+          "baseline": 0.0
+        },
+        {
+          "date": "2011-12-04",
+          "actual": 0.0,
+          "model": 12.55,
+          "baseline": 16.0
+        },
+        {
+          "date": "2011-12-05",
+          "actual": 507.0,
+          "model": 35.82,
+          "baseline": 113.5
+        },
+        {
+          "date": "2011-12-06",
+          "actual": 3.0,
+          "model": 107.52,
+          "baseline": 333.75
+        },
+        {
+          "date": "2011-12-07",
+          "actual": 51.0,
+          "model": 62.57,
+          "baseline": 35.75
+        },
+        {
+          "date": "2011-12-08",
+          "actual": 3.0,
+          "model": 33.33,
+          "baseline": 24.25
+        }
+      ],
+      "forecast": [
+        {
+          "date": "2011-12-09",
+          "selected": 20.18,
+          "model": 20.18,
+          "baseline": 20.25,
+          "lower": 0,
+          "upper": 51.92
+        },
+        {
+          "date": "2011-12-10",
+          "selected": 4.02,
+          "model": 4.02,
+          "baseline": 0.0,
+          "lower": 0,
+          "upper": 35.76
+        },
+        {
+          "date": "2011-12-11",
+          "selected": 4.2,
+          "model": 4.2,
+          "baseline": 13.0,
+          "lower": 0,
+          "upper": 35.93
+        },
+        {
+          "date": "2011-12-12",
+          "selected": 29.71,
+          "model": 29.71,
+          "baseline": 205.75,
+          "lower": 0,
+          "upper": 61.44
+        },
+        {
+          "date": "2011-12-13",
+          "selected": 54.38,
+          "model": 54.38,
+          "baseline": 333.75,
+          "lower": 22.65,
+          "upper": 86.11
+        },
+        {
+          "date": "2011-12-14",
+          "selected": 22.71,
+          "model": 22.71,
+          "baseline": 48.5,
+          "lower": 0,
+          "upper": 54.44
+        },
+        {
+          "date": "2011-12-15",
+          "selected": 55.97,
+          "model": 55.97,
+          "baseline": 9.0,
+          "lower": 24.24,
+          "upper": 87.71
+        }
+      ]
+    }
+  ],
+  "methodology": {
+    "horizon_days": 7,
+    "features": [
+      "yesterday",
+      "same_day_last_week",
+      "lag_14",
+      "lag_28",
+      "mean_7",
+      "mean_28",
+      "std_7",
+      "weekday",
+      "month",
+      "weekend"
+    ],
+    "selection": "Top eight products by units before validation, with at least 60 selling days.",
+    "evaluation": "Four weekly forecast origins in validation, then four in untouched holdout. Each origin uses only earlier observations.",
+    "range": "The selected model's 80th-percentile absolute validation error. This is an empirical range, not a guaranteed confidence interval.",
+    "limitations": [
+      "These are observed orders, not unconstrained demand; stockouts and opening hours are unknown.",
+      "C-prefixed negative invoice lines are cancellation proxies, not verified physical returns.",
+      "Identical invoice lines are retained because no unique line identifier proves they are duplicates.",
+      "The final extract date is excluded conservatively because it may be incomplete.",
+      "This historical retailer supplies some wholesale customers; bulk orders and seasonal changes can defeat either forecast."
+    ]
+  },
+  "source": {
+    "label": "UCI Online Retail — Daqing Chen (2015)",
+    "url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "doi": "10.24432/C5BW33",
+    "license": "CC BY 4.0",
+    "sha256": "43465a06f2ccf7c8b5bd2892bc7defb52f97487934fe93b16ae4c3936424676d"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "duckdb": "2.0.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1"
+  }
+}
