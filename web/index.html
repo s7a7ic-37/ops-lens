@@ -1,32 +1,219 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Investigate retail cancellations, audit invoice data and compare an ML forecast against simple baselines using openly licensed historical data.">
-  <meta name="theme-color" content="#123c37">
-  <title>OpsLens — orders, exceptions, evidence</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js"></script>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to workbench</a>
-  <header class="topbar"><a class="brand" href="#">Ops<span>Lens</span><i aria-hidden="true">↗</i></a><nav aria-label="Main"><a href="#overview">Overview</a><a href="#forecast">Forecast lab</a><a href="#audit">Data audit</a><a href="https://github.com/s7a7ic-37/ops-lens">Source ↗</a></nav></header>
-  <main id="main">
-    <div class="intro"><div><p class="eyebrow">OPERATIONS / DATA / MACHINE LEARNING</p><h1>Before a forecast,<br>ask better questions.</h1><p class="lede">An investigation workbench for retail orders. Follow the exceptions, compare the models, and see the evidence behind each number.</p></div><aside class="dataset"><span class="status-dot"></span> HISTORICAL PUBLIC DATA<strong>UK online retail</strong><span id="period">Loading source period…</span><p>A portfolio study, using invoice lines from 2010–2011. This is not a live shop or inventory system.</p><a href="https://archive.ics.uci.edu/dataset/352/online+retail">UCI dataset & attribution ↗</a></aside></div>
-    <p id="loading" role="status">Preparing the report…</p><div id="error" role="alert" hidden><p>The report could not be loaded. Check your connection and try again.</p><button id="retry">Retry report</button></div>
-    <div id="report" hidden>
-      <section id="overview" aria-labelledby="overview-title"><div class="section-heading"><div><p class="eyebrow">01 / FOLLOW THE SIGNAL</p><h2 id="overview-title">Orders & exceptions</h2></div><p>UK product lines only. Gross orders and cancellations are counted separately.</p></div><div id="metrics" class="metrics"></div>
-        <div class="panel"><div class="panel-heading"><h3>A year of order activity</h3><span>Weekly units · first and last weeks are partial</span></div><div id="weekly-chart" class="chart"></div><details><summary>View weekly chart data</summary><div id="weekly-table" class="table-wrap"></div></details></div>
-        <div class="panel"><div class="panel-heading"><h3>Start the investigation here</h3><span>Highest cancellation / order ratios · at least 500 ordered units</span></div><p class="muted">A cancellation flag is a clue, not a verified return. Ratios can exceed 100% when cancellations relate to orders outside this extract. No invoice matching or cause is inferred.</p><div id="watchlist" class="table-wrap"></div></div>
-      </section>
-      <section id="forecast" aria-labelledby="forecast-title"><div class="section-heading"><div><p class="eyebrow">02 / MAKE ML EARN ITS PLACE</p><h2 id="forecast-title">The forecast lab</h2></div><p>Eight products chosen using only pre-validation sales. Seven days ahead, tested one week at a time.</p></div>
-        <div class="panel"><label for="product">Investigate a product</label><select id="product"></select><div class="forecast-heading"><div><span id="sku" class="eyebrow"></span><h3 id="product-name"></h3></div><span id="selected-method" class="pill"></span></div><p id="selection-note" class="muted"></p><div id="evaluation-chart" class="chart"></div><p class="chart-caption">Untouched holdout · 11 Nov–8 Dec 2011. Lines are weekly forecasts made before those observations became available.</p><div id="comparison" class="table-wrap"></div><p class="muted">MAE is the average absolute error in units per day. WAPE is total absolute error divided by total observed units; lower is better. It is not an accuracy percentage.</p></div>
-        <details class="panel"><summary>View daily holdout chart data</summary><div id="evaluation-table" class="table-wrap"></div></details>
-        <div class="panel"><div class="panel-heading"><h3>What would the next week look like?</h3><button id="download">Export forecast CSV ↓</button></div><p class="muted">A historical forecast issued after 8 Dec 2011. These dates have already passed. No later observations are used to train this forecast.</p><div id="future-chart" class="chart"></div><p id="range-note" class="chart-caption"></p><div id="future-table" class="table-wrap"></div></div>
-      </section>
-      <section id="audit" aria-labelledby="audit-title"><div class="section-heading"><div><p class="eyebrow">03 / SHOW YOUR WORK</p><h2 id="audit-title">Can we trust the input?</h2></div><p>SQL classification, explicit exclusions, and a reproducible Python pipeline.</p></div><div class="audit-grid"><div class="panel"><h3>Every row accounted for</h3><div id="audit-table" class="table-wrap"></div><p id="duplicates" class="muted"></p></div><div class="panel method"><h3>How the comparison works</h3><ol><li><strong>Classify first.</strong> Separate positive product orders, cancellation proxies, adjustments and unusable lines. Customer identifiers are not retained.</li><li><strong>Choose before looking ahead.</strong> Select the eight largest products using orders up to 13 Oct. Compare two simple baselines on 14 Oct–10 Nov validation data, then compare the better baseline with gradient boosting.</li><li><strong>Freeze the choice.</strong> Evaluate each chosen method on 11 Nov–8 Dec holdout data. Refit at each weekly origin using only earlier observations.</li><li><strong>Show the limits.</strong> Orders are observed purchases, not unconstrained demand. Bulk orders, stockouts and seasonal changes can defeat every method.</li></ol><a href="https://github.com/s7a7ic-37/ops-lens/blob/main/MODEL_CARD.md">Read the model card ↗</a></div></div><div class="notice"><strong>The finding matters more than the model.</strong><p id="finding"></p></div></section>
-    </div>
-  </main>
-  <footer><div><a class="brand" href="#">Ops<span>Lens</span></a><p>Built by <a href="https://portfolio.artemislab.co.uk">Maksymilian Pasiecki</a> · Python / DuckDB SQL / scikit-learn / JavaScript</p></div><p id="provenance">Data: Daqing Chen (2015), UCI Online Retail, CC BY 4.0.</p></footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Investigate retail cancellations, audit invoice data and compare an ML forecast against simple baselines using openly licensed historical data."
+    />
+    <meta name="theme-color" content="#123c37" />
+    <title>OpsLens — orders, exceptions, evidence</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workbench</a>
+    <header class="topbar">
+      <a class="brand" href="#"
+        >Ops<span>Lens</span><i aria-hidden="true">↗</i></a
+      >
+      <nav aria-label="Main">
+        <a href="#overview">Overview</a><a href="#forecast">Forecast lab</a
+        ><a href="#audit">Data audit</a
+        ><a href="https://github.com/s7a7ic-37/ops-lens">Source ↗</a>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">OPERATIONS / DATA / MACHINE LEARNING</p>
+          <h1>Before a forecast,<br />ask better questions.</h1>
+          <p class="lede">
+            An investigation workbench for retail orders. Follow the exceptions,
+            compare the models, and see the evidence behind each number.
+          </p>
+        </div>
+        <aside class="dataset">
+          <span class="status-dot"></span> HISTORICAL PUBLIC DATA<strong
+            >UK online retail</strong
+          ><span id="period">Loading source period…</span>
+          <p>
+            A portfolio study, using invoice lines from 2010–2011. This is not a
+            live shop or inventory system.
+          </p>
+          <a href="https://archive.ics.uci.edu/dataset/352/online+retail"
+            >UCI dataset & attribution ↗</a
+          >
+        </aside>
+      </div>
+      <p id="loading" role="status">Preparing the report…</p>
+      <div id="error" role="alert" hidden>
+        <p>
+          The report could not be loaded. Check your connection and try again.
+        </p>
+        <button id="retry">Retry report</button>
+      </div>
+      <div id="report" hidden>
+        <section id="overview" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / FOLLOW THE SIGNAL</p>
+              <h2 id="overview-title">Orders & exceptions</h2>
+            </div>
+            <p>
+              UK product lines only. Gross orders and cancellations are counted
+              separately.
+            </p>
+          </div>
+          <div id="metrics" class="metrics"></div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3>A year of order activity</h3>
+              <span>Weekly units · first and last weeks are partial</span>
+            </div>
+            <div id="weekly-chart" class="chart"></div>
+            <details>
+              <summary>View weekly chart data</summary>
+              <div id="weekly-table" class="table-wrap"></div>
+            </details>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3>Start the investigation here</h3>
+              <span
+                >Highest cancellation / order ratios · at least 500 ordered
+                units</span
+              >
+            </div>
+            <p class="muted">
+              A cancellation flag is a clue, not a verified return. Ratios can
+              exceed 100% when cancellations relate to orders outside this
+              extract. No invoice matching or cause is inferred.
+            </p>
+            <div id="watchlist" class="table-wrap"></div>
+          </div>
+        </section>
+        <section id="forecast" aria-labelledby="forecast-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / MAKE ML EARN ITS PLACE</p>
+              <h2 id="forecast-title">The forecast lab</h2>
+            </div>
+            <p>
+              Eight products chosen using only pre-validation sales. Seven days
+              ahead, tested one week at a time.
+            </p>
+          </div>
+          <div class="panel">
+            <label for="product">Investigate a product</label
+            ><select id="product"></select>
+            <div class="forecast-heading">
+              <div>
+                <span id="sku" class="eyebrow"></span>
+                <h3 id="product-name"></h3>
+              </div>
+              <span id="selected-method" class="pill"></span>
+            </div>
+            <p id="selection-note" class="muted"></p>
+            <div id="evaluation-chart" class="chart"></div>
+            <p class="chart-caption">
+              Untouched holdout · 11 Nov–8 Dec 2011. Lines are weekly forecasts
+              made before those observations became available.
+            </p>
+            <div id="comparison" class="table-wrap"></div>
+            <p class="muted">
+              MAE is the average absolute error in units per day. WAPE is total
+              absolute error divided by total observed units; lower is better.
+              It is not an accuracy percentage.
+            </p>
+          </div>
+          <details class="panel">
+            <summary>View daily holdout chart data</summary>
+            <div id="evaluation-table" class="table-wrap"></div>
+          </details>
+          <div class="panel">
+            <div class="panel-heading">
+              <h3>What would the next week look like?</h3>
+              <button id="download">Export forecast CSV ↓</button>
+            </div>
+            <p class="muted">
+              A historical forecast issued after 8 Dec 2011. These dates have
+              already passed. No later observations are used to train this
+              forecast.
+            </p>
+            <div id="future-chart" class="chart"></div>
+            <p id="range-note" class="chart-caption"></p>
+            <div id="future-table" class="table-wrap"></div>
+          </div>
+        </section>
+        <section id="audit" aria-labelledby="audit-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 / SHOW YOUR WORK</p>
+              <h2 id="audit-title">Can we trust the input?</h2>
+            </div>
+            <p>
+              SQL classification, explicit exclusions, and a reproducible Python
+              pipeline.
+            </p>
+          </div>
+          <div class="audit-grid">
+            <div class="panel">
+              <h3>Every row accounted for</h3>
+              <div id="audit-table" class="table-wrap"></div>
+              <p id="duplicates" class="muted"></p>
+            </div>
+            <div class="panel method">
+              <h3>How the comparison works</h3>
+              <ol>
+                <li>
+                  <strong>Classify first.</strong> Separate positive product
+                  orders, cancellation proxies, adjustments and unusable lines.
+                  Customer identifiers are not retained.
+                </li>
+                <li>
+                  <strong>Choose before looking ahead.</strong> Select the eight
+                  largest products using orders up to 13 Oct. Compare two simple
+                  baselines on 14 Oct–10 Nov validation data, then compare the
+                  better baseline with gradient boosting.
+                </li>
+                <li>
+                  <strong>Freeze the choice.</strong> Evaluate each chosen
+                  method on 11 Nov–8 Dec holdout data. Refit at each weekly
+                  origin using only earlier observations.
+                </li>
+                <li>
+                  <strong>Show the limits.</strong> Orders are observed
+                  purchases, not unconstrained demand. Bulk orders, stockouts
+                  and seasonal changes can defeat every method.
+                </li>
+              </ol>
+              <a
+                href="https://github.com/s7a7ic-37/ops-lens/blob/main/MODEL_CARD.md"
+                >Read the model card ↗</a
+              >
+            </div>
+          </div>
+          <div class="notice">
+            <strong>The finding matters more than the model.</strong>
+            <p id="finding"></p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <a class="brand" href="#">Ops<span>Lens</span></a>
+        <p>
+          Built by
+          <a href="https://portfolio.artemislab.co.uk">Maksymilian Pasiecki</a>
+          · Python / DuckDB SQL / scikit-learn / JavaScript
+        </p>
+      </div>
+      <p id="provenance">
+        Data: Daqing Chen (2015), UCI Online Retail, CC BY 4.0.
+      </p>
+    </footer>
+  </body>
 </html>
