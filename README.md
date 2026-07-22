@@ -2,7 +2,7 @@
 
 A retail investigation workbench: classify invoice lines in SQL, follow cancellation exceptions, and test whether a machine-learning forecast improves on simple weekly patterns.
 
-**[Open the workbench](https://opslens.mpasiecki.workers.dev)** · [Portfolio](https://portfolio.artemislab.co.uk) · [Model card](MODEL_CARD.md)
+**[Open the workbench](https://opslens.artemislab.co.uk)** · [Portfolio](https://portfolio.artemislab.co.uk) · [Model card](MODEL_CARD.md)
 
 This is a portfolio study using openly licensed historical data, not a live inventory service. The browser reads a precomputed aggregate report; there are no accounts, uploads, API keys or paid model calls.
 
@@ -55,4 +55,4 @@ Source: Daqing Chen (2015), **Online Retail**, UCI Machine Learning Repository, 
 
 The report filters country and the final extraction day, classifies and aggregates invoice lines, and adds derived forecasts. It omits customer identifiers and raw invoice records. These transformations are this project's work; the underlying data is credited to its creator. Code is MIT licensed; the derived report retains the dataset's CC BY 4.0 attribution.
 
-The custom hostname opslens.artemislab.co.uk is attached in Cloudflare and appears in public DNS, but remained unresolved in the local browser during delivery. The verified workers.dev address above is the primary demo link until hostname propagation is confirmed.
+The custom hostname is verified. The owner-account fallback is https://opslens.mpasiecki.workers.dev. CI also scans the public web directory for credentials with a pinned, offline Gitleaks container and redacted output.
