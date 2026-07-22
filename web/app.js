@@ -328,12 +328,7 @@ function renderReport() {
   );
   const source = element("a", "Dataset & licence");
   source.href = report.source.url;
-  $("provenance").append(
-    source,
-    document.createTextNode(
-      ` · Report built ${new Date(report.generated_at).toLocaleDateString("en-GB", { timeZone: "UTC" })}.`,
-    ),
-  );
+  $("provenance").append(source);
   renderForecast();
 }
 
