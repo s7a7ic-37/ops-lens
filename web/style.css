@@ -189,7 +189,7 @@ section {
 }
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -253,6 +253,8 @@ section {
   max-height: 300px;
   overflow: visible;
 }
+.chart { overflow-x: auto; }
+.chart-hint { display: none; }
 .legend {
   display: flex;
   gap: 22px;
@@ -345,6 +347,7 @@ details {
   margin-top: 12px;
 }
 summary {
+  min-height: 44px;
   cursor: pointer;
   color: var(--green);
   padding: 8px 0;
@@ -444,7 +447,7 @@ footer p {
     max-width: none;
   }
   .metrics {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .audit-grid {
     grid-template-columns: 1fr;
@@ -481,8 +484,17 @@ footer p {
     gap: 12px;
   }
   .chart svg {
+    min-width: 1000px;
     min-height: 140px;
   }
+  .chart-hint { display: block; }
+  .metric { overflow-wrap: anywhere; }
+  select { font-size: 16px; }
+  .pill { white-space: normal; max-width: 100%; }
+  nav a { display: inline-flex; align-items: center; min-height: 44px; }
+  nav { gap: 0 14px; }
+  #watchlist table, #comparison table, #evaluation-table table { min-width: 560px; }
+  #future-table table, #weekly-table table { min-width: 420px; }
   th,
   td {
     padding: 10px 8px;
@@ -493,6 +505,9 @@ footer p {
   .chart-caption {
     font-size: 11px;
   }
+}
+@media (max-width: 380px) {
+  .metrics { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   html {

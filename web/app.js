@@ -43,6 +43,9 @@ function table(target, headers, rows, caption) {
   });
   result.append(body);
   $(target).replaceChildren(result);
+  $(target).setAttribute("tabindex", "0");
+  $(target).setAttribute("role", "region");
+  $(target).setAttribute("aria-label", caption);
 }
 
 function chart(target, rows, series, title) {
@@ -123,6 +126,9 @@ function chart(target, rows, series, title) {
     legend.append(item);
   });
   $(target).replaceChildren(svg, legend);
+  $(target).setAttribute("tabindex", "0");
+  $(target).setAttribute("role", "region");
+  $(target).setAttribute("aria-label", title);
 }
 
 function renderForecast() {
