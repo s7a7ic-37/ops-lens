@@ -367,6 +367,8 @@ async function load() {
     $("error").hidden = false;
   } finally {
     $("loading").hidden = true;
+    // The report appears after the browser's initial hash navigation.
+    document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
   }
 }
 $("product").addEventListener("change", renderForecast);
