@@ -106,7 +106,12 @@
               ahead, tested one week at a time.
             </p>
           </div>
-          <div class="panel">
+          <div class="panel" id="cohort">
+            <div class="panel-heading"><h3>The whole cohort, side by side</h3><span>Every selected product, including the losses</span></div>
+            <p class="muted">Validation made the choice. This later holdout table tests it. WAPE is error, not accuracy. A change of +10 percentage points means more error than the simple baseline.</p>
+            <div id="cohort-table" class="table-wrap"></div>
+          </div>
+          <div class="panel" id="product-detail">
             <label for="product">Investigate a product</label
             ><select id="product"></select>
             <div class="forecast-heading">

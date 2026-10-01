@@ -37,6 +37,8 @@ The checked-in web/report.json is sufficient to run the demo without Python pack
 
 WAPE is an error ratio, not model accuracy. The all-ML holdout result happened to outperform the selected policy, but the policy was not changed after seeing that result. See the model card for dates, caveats and individual evaluation rules.
 
+The forecast lab includes all eight products in a side-by-side cohort table: validation-selected method, simple-baseline holdout WAPE, selected-method holdout WAPE and the difference in percentage points. A positive difference means more error. This view exposes individual losses without changing any selection after seeing the holdout. Tables and full-size charts remain scrollable and keyboard accessible on phones.
+
 ## Project map
 
 | File | Purpose |

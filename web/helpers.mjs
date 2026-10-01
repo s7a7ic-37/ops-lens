@@ -4,6 +4,21 @@ export const methodNames = {
   weekday_mean_4w: "Four-week weekday mean",
 };
 
+export function cohortComparison(products) {
+  return products.map((product) => {
+    const selected = product.holdout[product.selected_method].wape;
+    const baseline = product.holdout[product.baseline_method].wape;
+    return {
+      sku: product.sku,
+      name: product.name,
+      method: methodNames[product.selected_method],
+      selected,
+      baseline,
+      change: selected === null || baseline === null ? null : selected - baseline,
+    };
+  });
+}
+
 export function forecastCsv(product) {
   if (
     !/^[A-Z0-9]+$/.test(product.sku) ||

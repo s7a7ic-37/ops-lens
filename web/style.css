@@ -494,6 +494,7 @@ footer p {
   nav a { display: inline-flex; align-items: center; min-height: 44px; }
   nav { gap: 0 14px; }
   #watchlist table, #comparison table, #evaluation-table table { min-width: 560px; }
+  #cohort-table table { min-width: 850px; }
   #future-table table, #weekly-table table { min-width: 420px; }
   th,
   td {

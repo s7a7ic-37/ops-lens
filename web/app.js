@@ -1,4 +1,4 @@
-import { methodNames, forecastCsv } from "./helpers.mjs";
+import { methodNames, forecastCsv, cohortComparison } from "./helpers.mjs";
 
 const $ = (id) => document.getElementById(id);
 const number = (value) =>
@@ -265,6 +265,15 @@ function renderReport() {
       );
       return node;
     }),
+  );
+  table(
+    "cohort-table",
+    ["SKU", "Product", "Validation choice", "Simple baseline WAPE", "Chosen method WAPE", "Change (pp)"],
+    cohortComparison(report.products).map((row) => [
+      row.sku, row.name, row.method, percent(row.baseline), percent(row.selected),
+      row.change === null ? "N/A" : number(row.change),
+    ]),
+    "All eight products on the untouched holdout. Negative change means less error; positive means more. Methods remain selected by earlier validation, never by this table.",
   );
   chart(
     "weekly-chart",
