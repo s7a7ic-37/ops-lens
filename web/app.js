@@ -24,7 +24,7 @@ function table(target, headers, rows, caption) {
   const result = element("table");
   const title = element("caption", caption);
   title.style.cssText =
-    "text-align:left;font-size:11px;color:#5a6f6c;margin:8px 0";
+    "text-align:left;font-size:11px;color:#61718a;margin:8px 0";
   result.append(title);
   const head = element("thead"),
     heading = element("tr");
@@ -76,7 +76,7 @@ function chart(target, rows, series, title) {
       x2: 980,
       y1: y(value),
       y2: y(value),
-      stroke: "#e4eae2",
+      stroke: "#e1e8f2",
     });
     shape(
       "text",
@@ -84,7 +84,7 @@ function chart(target, rows, series, title) {
         x: 48,
         y: y(value) + 4,
         "text-anchor": "end",
-        fill: "#61746e",
+        fill: "#61718a",
         "font-size": 11,
       },
       number(value),
@@ -113,7 +113,7 @@ function chart(target, rows, series, title) {
         y: 248,
         "text-anchor":
           index === 0 ? "start" : index === rows.length - 1 ? "end" : "middle",
-        fill: "#61746e",
+        fill: "#61718a",
         "font-size": 12,
       },
       date(rows[index].date || rows[index].week),
@@ -145,7 +145,7 @@ function renderForecast() {
     "evaluation-chart",
     product.evaluation,
     [
-      { key: "actual", label: "Observed orders", colour: "#153e35" },
+      { key: "actual", label: "Observed orders", colour: "#172b49" },
       { key: "model", label: "Gradient boosting", colour: "#7765b6" },
       {
         key: "baseline",
@@ -198,14 +198,14 @@ function renderForecast() {
       {
         key: "upper",
         label: "Empirical upper range",
-        colour: "#a2bca3",
+        colour: "#92acd7",
         dash: "3 4",
       },
-      { key: "selected", label: selectedName, colour: "#126451" },
+      { key: "selected", label: selectedName, colour: "#245edb" },
       {
         key: "lower",
         label: "Empirical lower range",
-        colour: "#a2bca3",
+        colour: "#92acd7",
         dash: "3 4",
       },
     ],
@@ -279,7 +279,7 @@ function renderReport() {
     "weekly-chart",
     report.weekly,
     [
-      { key: "ordered", label: "Gross ordered units", colour: "#126451" },
+      { key: "ordered", label: "Gross ordered units", colour: "#245edb" },
       {
         key: "cancelled",
         label: "Cancellation proxy units",

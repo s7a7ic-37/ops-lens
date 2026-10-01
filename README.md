@@ -58,3 +58,7 @@ Source: Daqing Chen (2015), **Online Retail**, UCI Machine Learning Repository, 
 The report filters country and the final extraction day, classifies and aggregates invoice lines, and adds derived forecasts. It omits customer identifiers and raw invoice records. These transformations are this project's work; the underlying data is credited to its creator. Code is MIT licensed; the derived report retains the dataset's CC BY 4.0 attribution.
 
 The custom hostname is verified. The owner-account fallback is https://opslens.mpasiecki.workers.dev. CI also scans the public web directory for credentials with a pinned, offline Gitleaks container and redacted output.
+
+## Visual identity
+
+The workbench uses a navy/cobalt analytical palette, with a matching chart tab icon in SVG/PNG/ICO formats and an Apple touch icon. Chart method colours remain distinct and numeric alternatives remain available.

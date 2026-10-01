@@ -7,13 +7,13 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  color: #203b39;
-  background: #f7f8f3;
+  color: #20324d;
+  background: #f2f5fa;
   font-synthesis: none;
   line-height: 1.6;
-  --green: #126451;
-  --muted: #5a6f6c;
-  --line: #dce4dc;
+  --accent: #245edb;
+  --muted: #61718a;
+  --line: #dbe3ef;
   --orange: #c27330;
 }
 * {
@@ -31,23 +31,23 @@ a {
   text-underline-offset: 4px;
 }
 a:hover {
-  color: var(--green);
+  color: var(--accent);
 }
 button,
 select {
   font: inherit;
 }
 button {
-  border: 1px solid #bdcfc4;
-  background: #edf4eb;
-  color: #174f40;
+  border: 1px solid #bccde6;
+  background: #edf3ff;
+  color: #204da0;
   padding: 9px 15px;
   border-radius: 7px;
   cursor: pointer;
   font-weight: 650;
 }
 button:hover {
-  background: #deeddc;
+  background: #dce8ff;
 }
 :focus-visible {
   outline: 3px solid #b07828;
@@ -84,7 +84,7 @@ footer {
   font-size: 18px;
   font-style: normal;
   margin-left: 12px;
-  color: var(--green);
+  color: var(--accent);
 }
 nav {
   display: flex;
@@ -106,7 +106,7 @@ nav a {
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 1.7px;
-  color: var(--green);
+  color: var(--accent);
   margin: 0 0 14px;
 }
 h1 {
@@ -141,7 +141,7 @@ p {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 25px;
-  background: #edf2e8;
+  background: #e9effc;
 }
 .dataset strong {
   display: block;
@@ -153,7 +153,7 @@ p {
   font-size: 13px;
   letter-spacing: 0;
   margin: 14px 0;
-  color: #4e655c;
+  color: #556b8c;
 }
 .dataset a {
   letter-spacing: 0;
@@ -164,7 +164,7 @@ p {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #49875a;
+  background: #245edb;
   margin-right: 7px;
 }
 section {
@@ -289,7 +289,7 @@ th {
 th,
 td {
   padding: 12px 10px;
-  border-bottom: 1px solid #e8ede6;
+  border-bottom: 1px solid #e6ebf3;
   vertical-align: top;
 }
 td:first-child,
@@ -319,11 +319,11 @@ td strong {
 .pill {
   display: inline-block;
   padding: 6px 10px;
-  background: #e9f3e7;
+  background: #e6efff;
   border-radius: 5px;
   font-size: 11px;
   white-space: nowrap;
-  color: #285e3d;
+  color: #204da0;
   font-weight: 600;
 }
 label {
@@ -349,7 +349,7 @@ details {
 summary {
   min-height: 44px;
   cursor: pointer;
-  color: var(--green);
+  color: var(--accent);
   padding: 8px 0;
 }
 .audit-grid {
@@ -370,22 +370,22 @@ summary {
   padding: 0 0 14px 8px;
 }
 .method strong {
-  color: #203b39;
+  color: #20324d;
 }
 .method a {
   font-size: 12px;
 }
 .notice {
   padding: 24px 27px;
-  background: #eaf0e2;
-  border-left: 3px solid #568449;
+  background: #e8effc;
+  border-left: 3px solid #245edb;
   margin-top: 20px;
   border-radius: 0 7px 7px 0;
   font-size: 13px;
 }
 .notice p {
   margin: 7px 0 0;
-  color: #425d48;
+  color: #3c5278;
 }
 footer {
   border-top: 1px solid var(--line);
@@ -515,3 +515,11 @@ footer p {
     scroll-behavior: auto;
   }
 }
+
+.topbar { max-width: none; background: #172b49; color: #ecf3ff; padding-left: max(44px,calc((100% - 1172px)/2)); padding-right: max(44px,calc((100% - 1172px)/2)); border-bottom: 3px solid #3975ed; }
+.topbar .brand i, .topbar a:hover { color: #9bc6ff; }
+.metric { border-top: 3px solid #3975ed; box-shadow: 0 3px 12px #172b4906; }
+.metric:nth-child(2) { border-top-color: #c27330; }
+.metric:nth-child(3) { border-top-color: #172b49; }
+.panel { box-shadow: 0 3px 12px #172b4904; }
+@media(max-width:800px) { .topbar { padding-left: 22px; padding-right: 22px; } }
