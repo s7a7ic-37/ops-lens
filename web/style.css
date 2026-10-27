@@ -397,6 +397,7 @@ footer p {
   margin: 8px 0 0;
   max-width: 420px;
 }
+.project-return { white-space: nowrap; }
 .skip {
   position: absolute;
   top: -80px;
@@ -426,6 +427,7 @@ footer p {
   }
   .topbar {
     align-items: start;
+    flex-wrap: wrap;
   }
   nav {
     gap: 14px;
@@ -454,6 +456,7 @@ footer p {
   }
   .section-heading > p {
     max-width: none;
+    align-self: stretch;
   }
   .panel-heading {
     align-items: start;
@@ -488,6 +491,8 @@ footer p {
   .pill { white-space: normal; max-width: 100%; }
   nav a { display: inline-flex; align-items: center; min-height: 44px; }
   nav { gap: 0 14px; }
+  .topbar nav { width: 100%; justify-content: flex-start; }
+  .project-return { padding: 0 10px; border: 1px solid currentColor; }
   #watchlist table, #comparison table, #evaluation-table table { min-width: 560px; }
   #cohort-table table { min-width: 850px; }
   #future-table table, #weekly-table table { min-width: 420px; }
@@ -502,7 +507,7 @@ footer p {
     font-size: 11px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .metrics { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
