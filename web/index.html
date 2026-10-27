@@ -31,21 +31,14 @@
     <main id="main">
       <div class="intro">
         <div>
-          <p class="eyebrow">OPERATIONS / DATA / MACHINE LEARNING</p>
-          <h1>Before a forecast,<br />ask better questions.</h1>
-          <p class="lede">
-            An investigation workbench for retail orders. Follow the exceptions,
-            compare the models, and see the evidence behind each number.
-          </p>
+          <h1>Retail operations</h1>
+
         </div>
         <aside class="dataset">
           <span class="status-dot"></span> HISTORICAL PUBLIC DATA<strong
             >UK online retail</strong
           ><span id="period">Loading source period…</span>
-          <p>
-            A portfolio study, using invoice lines from 2010–2011. This is not a
-            live shop or inventory system.
-          </p>
+
           <a href="https://archive.ics.uci.edu/dataset/352/online+retail"
             >UCI dataset & attribution ↗</a
           >
@@ -63,7 +56,6 @@
         <section id="overview" aria-labelledby="overview-title">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">01 / FOLLOW THE SIGNAL</p>
               <h2 id="overview-title">Orders & exceptions</h2>
             </div>
             <p>
@@ -85,7 +77,7 @@
           </div>
           <div class="panel">
             <div class="panel-heading">
-              <h3>Start the investigation here</h3>
+              <h3>Cancellation watchlist</h3>
               <span
                 >Highest cancellation / order ratios · at least 500 ordered
                 units</span
@@ -102,8 +94,7 @@
         <section id="forecast" aria-labelledby="forecast-title">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">02 / MAKE ML EARN ITS PLACE</p>
-              <h2 id="forecast-title">The forecast lab</h2>
+              <h2 id="forecast-title">Forecast comparison</h2>
             </div>
             <p>
               Eight products chosen using only pre-validation sales. Seven days
@@ -111,7 +102,7 @@
             </p>
           </div>
           <div class="panel" id="cohort">
-            <div class="panel-heading"><h3>The whole cohort, side by side</h3><span>Every selected product, including the losses</span></div>
+            <div class="panel-heading"><h3>Product comparison</h3><span>Holdout performance</span></div>
             <p class="muted">Validation made the choice. This later holdout table tests it. WAPE is error, not accuracy. A change of +10 percentage points means more error than the simple baseline.</p>
             <div id="cohort-table" class="table-wrap"></div>
           </div>
@@ -144,7 +135,7 @@
           </details>
           <div class="panel">
             <div class="panel-heading">
-              <h3>What would the next week look like?</h3>
+              <h3>Seven-day forecast</h3>
               <button id="download">Export forecast CSV ↓</button>
             </div>
             <p class="muted">
@@ -160,8 +151,7 @@
         <section id="audit" aria-labelledby="audit-title">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">03 / SHOW YOUR WORK</p>
-              <h2 id="audit-title">Can we trust the input?</h2>
+              <h2 id="audit-title">Data audit</h2>
             </div>
             <p>
               SQL classification, explicit exclusions, and a reproducible Python
@@ -206,7 +196,7 @@
             </div>
           </div>
           <div class="notice">
-            <strong>The finding matters more than the model.</strong>
+            <strong>Evaluation result</strong>
             <p id="finding"></p>
           </div>
         </section>
