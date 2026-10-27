@@ -1,7 +1,7 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  color: #20324d;
-  background: #f2f5fa;
+  color: var(--ink,#20324d);
+  background: var(--page,#f2f5fa);
   font-synthesis: none;
   line-height: 1.6;
   --accent: #245edb;
@@ -33,15 +33,15 @@ select {
 }
 button {
   border: 1px solid #bccde6;
-  background: #edf3ff;
-  color: #204da0;
+  background: var(--control,#edf3ff);
+  color: var(--control-ink,#204da0);
   padding: 9px 15px;
   border-radius: 2px;
   cursor: pointer;
   font-weight: 650;
 }
 button:hover {
-  background: #dce8ff;
+  background: var(--control-hover,#dce8ff);
 }
 :focus-visible {
   outline: 3px solid #b07828;
@@ -135,7 +135,7 @@ p {
   border: 1px solid var(--line);
   border-radius: 2px;
   padding: 16px 20px;
-  background: #e9effc;
+  background: var(--tint,#e9effc);
 }
 .dataset strong {
   display: block;
@@ -147,7 +147,7 @@ p {
   font-size: 13px;
   letter-spacing: 0;
   margin: 14px 0;
-  color: #556b8c;
+  color: var(--muted);
 }
 .dataset a {
   margin-left: 10px;
@@ -192,7 +192,7 @@ section {
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 2px;
-  background: #fff;
+  background: var(--surface,#fff);
 }
 .metric span {
   display: block;
@@ -213,7 +213,7 @@ section {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 2px;
-  background: #fff;
+  background: var(--surface,#fff);
   margin-bottom: 20px;
   min-width: 0;
 }
@@ -284,7 +284,7 @@ th {
 th,
 td {
   padding: 12px 10px;
-  border-bottom: 1px solid #e6ebf3;
+  border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
 td:first-child,
@@ -314,11 +314,11 @@ td strong {
 .pill {
   display: inline-block;
   padding: 6px 10px;
-  background: #e6efff;
+  background: var(--tint,#e6efff);
   border-radius: 5px;
   font-size: 11px;
   white-space: nowrap;
-  color: #204da0;
+  color: var(--control-ink,#204da0);
   font-weight: 600;
 }
 label {
@@ -329,7 +329,7 @@ label {
 }
 select {
   padding: 12px;
-  background: #f9faf6;
+  background: var(--field,#f9faf6);
   border: 1px solid #bacabe;
   border-radius: 2px;
   width: 100%;
@@ -365,14 +365,14 @@ summary {
   padding: 0 0 14px 8px;
 }
 .method strong {
-  color: #20324d;
+  color: var(--ink,#20324d);
 }
 .method a {
   font-size: 12px;
 }
 .notice {
   padding: 24px 27px;
-  background: #e8effc;
+  background: var(--tint,#e8effc);
   border-left: 3px solid #245edb;
   margin-top: 20px;
   border-radius: 0 7px 7px 0;
@@ -380,7 +380,7 @@ summary {
 }
 .notice p {
   margin: 7px 0 0;
-  color: #3c5278;
+  color: var(--ink,#3c5278);
 }
 footer {
   border-top: 1px solid var(--line);
@@ -402,7 +402,7 @@ footer p {
   top: -80px;
   left: 15px;
   padding: 10px;
-  background: #fff;
+  background: var(--surface,#fff);
   z-index: 10;
 }
 .skip:focus {
@@ -411,7 +411,7 @@ footer p {
 #error {
   padding: 25px;
   border: 1px solid #c6815b;
-  background: #fff4eb;
+  background: var(--error-bg,#fff4eb);
   border-radius: 2px;
 }
 [hidden] {
@@ -524,3 +524,9 @@ td { font-family: Consolas,"Courier New",monospace; font-size: 12px; }
 .metrics { border-bottom: 3px solid #172b49; }
 .dataset strong { margin: 4px 0; }
 @media(max-width:800px) { .intro { gap: 16px; padding-top: 28px; } }
+
+:root[data-theme="dark"] {
+  --ink: #e3ebf7; --page: #111c2b; --surface: #19283d; --muted: #b3c4dc; --line: #40516b;
+  --accent: #92b8ff; --tint: #233551; --field: #17263d; --control: #29416a; --control-ink: #d3e3ff; --control-hover: #35527f;
+  --error-bg: #402a22; --series-actual: #e3ebf7; --series-model: #baa6ff; --series-blue: #86b3ff;
+}
