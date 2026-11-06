@@ -65,6 +65,9 @@ footer {
   gap: 24px;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 25px;
   letter-spacing: -1px;
   font-weight: 800;
@@ -510,6 +513,13 @@ footer p {
 @media (max-width: 480px) {
   .metrics { grid-template-columns: 1fr; }
 }
+@media (min-width: 380px) and (max-width: 480px) {
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric { padding: 14px; }
+  .metric strong { font-size: 21px; }
+  .metric span { min-height: 38px; }
+}
+footer > a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
