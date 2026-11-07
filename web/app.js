@@ -370,6 +370,7 @@ async function load() {
       report.source?.license !== "CC BY 4.0"
     )
       throw new Error("Invalid public report");
+    for (const product of report.products) forecastCsv(product);
     holdoutExport = holdoutCsv(report.products);
     renderReport();
     $("report").hidden = false;

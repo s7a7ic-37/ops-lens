@@ -27,8 +27,10 @@ export function forecastCsv(product) {
     throw new Error("Invalid forecast identity");
   }
   const rows = product.forecast.map((row) => {
+    const day = Date.parse(row.date + "T00:00:00Z");
     if (
       !/^\d{4}-\d{2}-\d{2}$/.test(row.date) ||
+      !Number.isFinite(day) || new Date(day).toISOString().slice(0, 10) !== row.date ||
       !["selected", "lower", "upper"].every(
         (key) => Number.isFinite(row[key]) && row[key] >= 0,
       )

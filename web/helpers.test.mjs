@@ -63,6 +63,15 @@ test("export rejects spreadsheet formulas and non-finite numbers", () => {
   );
 });
 
+test("forecast CSV rejects impossible calendar dates and accepts a real leap day", () => {
+  const product = {sku: "23166", selected_method: "seasonal_naive",
+    forecast: [{date: "2024-02-29", selected: 2, lower: 0, upper: 4}]};
+  assert.ok(forecastCsv(product).includes("2024-02-29,23166,"));
+  for (const date of ["2011-02-29", "2011-02-30", "2011-04-31", "2011-13-01"]) {
+    assert.throws(() => forecastCsv({...product, forecast: [{...product.forecast[0], date}]}), /Invalid forecast row/);
+  }
+});
+
 test("stock cover accumulates unrounded daily forecasts and finds the first shortfall", () => {
   const forecast = [{date: "2011-12-09", selected: 2.25}, {date: "2011-12-10", selected: 1.25}];
   assert.deepEqual(stockCover(forecast, 3, 2), {
