@@ -1,4 +1,4 @@
-import { methodNames, forecastCsv, cohortComparison } from "./helpers.mjs";
+import { methodNames, forecastCsv, cohortComparison, stockCover } from "./helpers.mjs";
 
 const $ = (id) => document.getElementById(id);
 const number = (value) =>
@@ -12,6 +12,12 @@ const date = (value) =>
     timeZone: "UTC",
   });
 let report;
+
+function clearStockCover() {
+  $("stock-result").replaceChildren();
+  $("stock-status").textContent = "";
+  $("stock-status").setAttribute("role", "status");
+}
 
 function element(tag, text, className) {
   const node = document.createElement(tag);
@@ -136,6 +142,8 @@ function renderForecast() {
     (item) => item.sku === $("product").value,
   );
   const selectedName = methodNames[product.selected_method];
+  $("stock-on-hand").value = "";
+  clearStockCover();
   $("sku").textContent = `SKU ${product.sku}`;
   $("product-name").textContent = product.name;
   $("selected-method").textContent = `Selected: ${selectedName}`;
@@ -372,6 +380,28 @@ async function load() {
   }
 }
 $("product").addEventListener("change", renderForecast);
+$("stock-form").addEventListener("input", clearStockCover);
+$("stock-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  clearStockCover();
+  const product = report.products.find((item) => item.sku === $("product").value);
+  try {
+    const result = stockCover(product.forecast, $("stock-on-hand").valueAsNumber, $("cover-days").valueAsNumber);
+    $("stock-result").replaceChildren(...[
+      ["Forecast units", number(result.forecastUnits) + " units"],
+      ["Modelled gap", number(result.topUpUnits) + " units"],
+      ["First shortfall", result.shortageDate ? date(result.shortageDate) + " 2011" : "None"],
+    ].map(([label, value]) => {
+      const card = element("p");
+      card.append(element("span", label), element("strong", value));
+      return card;
+    }));
+    $("stock-status").textContent = `SKU ${product.sku} through ${date(result.through)} 2011. Forecasts are summed before rounding up to whole units. This is a scenario, not an order recommendation.`;
+  } catch (error) {
+    $("stock-status").setAttribute("role", "alert");
+    $("stock-status").textContent = error.message;
+  }
+});
 $("retry").addEventListener("click", load);
 $("download").addEventListener("click", () => {
   const product = report.products.find(

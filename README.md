@@ -8,6 +8,7 @@ A retail data workbench for investigating invoice exceptions and comparing weekl
 
 - SQL classification of orders, cancellation proxies, adjustments and invalid rows.
 - Product-level investigation, audit totals and CSV export.
+- A hypothetical stock-cover scenario using one to seven days of the selected historical forecast; shows rounded forecast units, the modelled gap and first shortfall date. It does not place orders or represent live inventory.
 - Eight-product forecast comparison using simple baselines and gradient boosting.
 - Time-based validation and holdout results, with numeric alternatives to charts.
 

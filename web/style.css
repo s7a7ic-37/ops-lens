@@ -47,6 +47,18 @@ button:hover {
   outline: 3px solid #b07828;
   outline-offset: 4px;
 }
+.stock-scenario { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+.scenario-form { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)) auto; gap: 14px; align-items: end; }
+.scenario-form label { display: grid; gap: 6px; min-width: 0; font-size: 12px; }
+.scenario-form input { width: 100%; min-width: 0; min-height: 44px; padding: 8px 10px; font: inherit; font-size: 16px; border: 1px solid var(--line); border-radius: 2px; background: var(--field,#fff); color: var(--ink,#20324d); }
+.scenario-result { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 16px; }
+.scenario-result:empty { display: none; }
+.scenario-result p { margin: 0; padding: 14px; border: 1px solid var(--line); }
+.scenario-result span { display: block; font-size: 12px; color: var(--muted); }
+.scenario-result strong { display: block; font-size: 20px; overflow-wrap: anywhere; }
+#stock-status { margin-top: 12px; }
+#stock-status:empty { display: none; }
+@media(max-width:600px) { .scenario-form { grid-template-columns: repeat(2,minmax(0,1fr)); } .scenario-form button { grid-column: 1/-1; } .scenario-result { grid-template-columns: 1fr; } }
 .topbar,
 main,
 footer {

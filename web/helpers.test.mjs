@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { forecastCsv, cohortComparison } from "./helpers.mjs";
+import { forecastCsv, cohortComparison, stockCover } from "./helpers.mjs";
 
 test("cohort comparison keeps the validation choice even when ML loses on holdout", () => {
   const product = {
@@ -36,4 +36,30 @@ test("export rejects spreadsheet formulas and non-finite numbers", () => {
     () => forecastCsv({ ...product, sku: "=cmd()" }),
     /Invalid forecast identity/,
   );
+});
+
+test("stock cover accumulates unrounded daily forecasts and finds the first shortfall", () => {
+  const forecast = [{date: "2011-12-09", selected: 2.25}, {date: "2011-12-10", selected: 1.25}];
+  assert.deepEqual(stockCover(forecast, 3, 2), {
+    forecastUnits: 4, topUpUnits: 1, shortageDate: "2011-12-10", through: "2011-12-10",
+  });
+  assert.deepEqual(stockCover(forecast, 4, 2), {
+    forecastUnits: 4, topUpUnits: 0, shortageDate: null, through: "2011-12-10",
+  });
+  assert.equal(stockCover(forecast, 3, 1).topUpUnits, 0);
+  assert.equal(stockCover(forecast.map(row => ({...row, selected: 0.4})), 0, 2).forecastUnits, 1);
+  assert.equal(stockCover(forecast.map(row => ({...row, selected: 0})), 0, 2).shortageDate, null);
+});
+
+test("stock cover rejects invalid stock, horizons and incomplete or invalid daily data", () => {
+  const rows = [{date: "2011-12-09", selected: 2}, {date: "2011-12-10", selected: 3}];
+  for (const stock of [-1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1]) {
+    assert.throws(() => stockCover(rows, stock, 2), /whole/);
+  }
+  for (const days of [0, -1, 1.5, NaN, 3, 8]) assert.throws(() => stockCover(rows, 0, days), /forecast days/);
+  for (const date of ["2011-02-30", "2011-12-12", "2011-12-09", "bad"])
+    assert.throws(() => stockCover([rows[0], {...rows[1], date}], 0, 2), /consecutive/);
+  for (const selected of [NaN, Infinity, -1])
+    assert.throws(() => stockCover([{...rows[0], selected}], 0, 1), /finite/);
+  assert.throws(() => stockCover(rows.map(row => ({...row, selected: Number.MAX_SAFE_INTEGER})), 0, 2), /too large/);
 });

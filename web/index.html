@@ -147,6 +147,21 @@
             <div id="future-chart" class="chart"></div>
             <p id="range-note" class="chart-caption"></p>
             <div id="future-table" class="table-wrap"></div>
+            <details class="stock-scenario">
+              <summary>Try a stock-cover scenario</summary>
+              <p class="muted">Hypothetical stock, using this historical forecast. Assumes no new deliveries; forecast uncertainty is not safety stock.</p>
+              <form id="stock-form" class="scenario-form">
+                <label for="stock-on-hand">Hypothetical stock on hand
+                  <input id="stock-on-hand" type="number" min="0" step="1" placeholder="e.g. 100" inputmode="numeric" required />
+                </label>
+                <label for="cover-days">Days of cover
+                  <input id="cover-days" type="number" min="1" max="7" step="1" value="7" inputmode="numeric" required />
+                </label>
+                <button type="submit">Check stock cover</button>
+              </form>
+              <p id="stock-status" class="muted" role="status"></p>
+              <div id="stock-result" class="scenario-result" role="status" aria-live="polite"></div>
+            </details>
           </div>
         </section>
         <section id="audit" aria-labelledby="audit-title">

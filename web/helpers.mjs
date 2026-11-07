@@ -50,3 +50,35 @@ export function forecastCsv(product) {
     ) + "\r\n"
   );
 }
+
+export function stockCover(forecast, onHand, days) {
+  if (!Number.isSafeInteger(onHand) || onHand < 0 ||
+      !Number.isSafeInteger(days) || days < 1 || days > 7 ||
+      !Array.isArray(forecast) || forecast.length < days) {
+    throw new Error("Use whole, non-negative stock units and 1–7 available forecast days.");
+  }
+  let total = 0;
+  let previousDay = null;
+  let shortageDate = null;
+  for (const row of forecast.slice(0, days)) {
+    const day = Date.parse(row.date + "T00:00:00Z");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(row.date) || !Number.isFinite(day) ||
+        new Date(day).toISOString().slice(0, 10) !== row.date ||
+        (previousDay !== null && day - previousDay !== 86400000) ||
+        !Number.isFinite(row.selected) || row.selected < 0) {
+      throw new Error("The scenario needs consecutive daily forecasts with finite, non-negative units.");
+    }
+    total += row.selected;
+    if (!Number.isFinite(total) || total > Number.MAX_SAFE_INTEGER) {
+      throw new Error("Forecast units are too large for a reliable stock calculation.");
+    }
+    if (shortageDate === null && total > onHand) shortageDate = row.date;
+    previousDay = day;
+  }
+  return {
+    forecastUnits: Math.ceil(total),
+    topUpUnits: Math.max(0, Math.ceil(total) - onHand),
+    shortageDate,
+    through: forecast[days - 1].date,
+  };
+}
