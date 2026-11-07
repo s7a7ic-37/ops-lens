@@ -1,6 +1,31 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { forecastCsv, cohortComparison, stockCover } from "./helpers.mjs";
+import { forecastCsv, holdoutCsv, cohortComparison, stockCover } from "./helpers.mjs";
+
+test("holdout CSV retains every product and its validation-selected method", () => {
+  const product = {sku: "23166", selected_method: "hist_gradient_boosting", baseline_method: "seasonal_naive",
+    evaluation: [{date: "2011-11-11", actual: 10, model: 12.5, baseline: 9}]};
+  const simple = {...product, sku: "85123A", selected_method: "seasonal_naive"};
+  const csv = holdoutCsv([product, simple]);
+  assert.equal(csv, [
+    "date,sku,selected_method,baseline_method,actual_units,selected_units,model_units,baseline_units",
+    "2011-11-11,23166,hist_gradient_boosting,seasonal_naive,10,12.5,12.5,9",
+    "2011-11-11,85123A,seasonal_naive,seasonal_naive,10,9,12.5,9", "",
+  ].join("\r\n"));
+  assert.equal(product.evaluation[0].actual, 10);
+});
+
+test("holdout CSV rejects unsafe identities, wrong choices and malformed numeric/date rows", () => {
+  const product = {sku: "23166", selected_method: "seasonal_naive", baseline_method: "seasonal_naive",
+    evaluation: [{date: "2011-11-11", actual: 10, model: 12.5, baseline: 9}]};
+  for (const fields of [{sku: "=cmd()"}, {selected_method: "unknown"}, {baseline_method: "hist_gradient_boosting"},
+    {selected_method: "weekday_mean_4w"}, {evaluation: []}]) {
+    assert.throws(() => holdoutCsv([{...product, ...fields}]), /Invalid holdout identity/);
+  }
+  for (const fields of [{date: "2011-02-30"}, {date: "=cmd()"}, {actual: NaN}, {model: Infinity}, {baseline: -1}, {actual: "10"}]) {
+    assert.throws(() => holdoutCsv([{...product, evaluation: [{...product.evaluation[0], ...fields}]}]), /Invalid holdout row/);
+  }
+});
 
 test("cohort comparison keeps the validation choice even when ML loses on holdout", () => {
   const product = {

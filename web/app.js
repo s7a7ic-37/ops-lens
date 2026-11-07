@@ -1,4 +1,4 @@
-import { methodNames, forecastCsv, cohortComparison, stockCover } from "./helpers.mjs";
+import { methodNames, forecastCsv, holdoutCsv, cohortComparison, stockCover } from "./helpers.mjs";
 
 const $ = (id) => document.getElementById(id);
 const number = (value) =>
@@ -12,6 +12,7 @@ const date = (value) =>
     timeZone: "UTC",
   });
 let report;
+let holdoutExport;
 
 function clearStockCover() {
   $("stock-result").replaceChildren();
@@ -281,7 +282,7 @@ function renderReport() {
       row.sku, row.name, row.method, percent(row.baseline), percent(row.selected),
       row.change === null ? "N/A" : number(row.change),
     ]),
-    "All eight products on the untouched holdout. Negative change means less error; positive means more. Methods remain selected by earlier validation, never by this table.",
+    `All ${report.products.length} products on the untouched holdout. Negative change means less error; positive means more. Methods remain selected by earlier validation, never by this table.`,
   );
   chart(
     "weekly-chart",
@@ -369,6 +370,7 @@ async function load() {
       report.source?.license !== "CC BY 4.0"
     )
       throw new Error("Invalid public report");
+    holdoutExport = holdoutCsv(report.products);
     renderReport();
     $("report").hidden = false;
   } catch {
@@ -403,17 +405,21 @@ $("stock-form").addEventListener("submit", (event) => {
   }
 });
 $("retry").addEventListener("click", load);
+function downloadCsv(content, filename) {
+  const url = URL.createObjectURL(new Blob([content], { type: "text/csv;charset=utf-8" }));
+  const link = element("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+$("download-holdout").addEventListener("click", () => {
+  downloadCsv(holdoutExport, "opslens-historical-holdout.csv");
+});
 $("download").addEventListener("click", () => {
   const product = report.products.find(
     (item) => item.sku === $("product").value,
   );
-  const url = URL.createObjectURL(
-    new Blob([forecastCsv(product)], { type: "text/csv;charset=utf-8" }),
-  );
-  const link = element("a");
-  link.href = url;
-  link.download = `opslens-${product.sku}-historical-forecast.csv`;
-  link.click();
-  URL.revokeObjectURL(url);
+  downloadCsv(forecastCsv(product), `opslens-${product.sku}-historical-forecast.csv`);
 });
 load();

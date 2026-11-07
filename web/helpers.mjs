@@ -51,6 +51,31 @@ export function forecastCsv(product) {
   );
 }
 
+export function holdoutCsv(products) {
+  const rows = ["date,sku,selected_method,baseline_method,actual_units,selected_units,model_units,baseline_units"];
+  for (const product of products) {
+    if (!/^[A-Z0-9]+$/.test(product.sku) ||
+        !Object.hasOwn(methodNames, product.selected_method) ||
+        !["seasonal_naive", "weekday_mean_4w"].includes(product.baseline_method) ||
+        (product.selected_method !== "hist_gradient_boosting" && product.selected_method !== product.baseline_method) ||
+        !Array.isArray(product.evaluation) || !product.evaluation.length) {
+      throw new Error("Invalid holdout identity");
+    }
+    for (const row of product.evaluation) {
+      const day = Date.parse(row.date + "T00:00:00Z");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(row.date) || !Number.isFinite(day) ||
+          new Date(day).toISOString().slice(0, 10) !== row.date ||
+          ![row.actual, row.model, row.baseline].every(value => Number.isFinite(value) && value >= 0)) {
+        throw new Error("Invalid holdout row");
+      }
+      rows.push([row.date, product.sku, product.selected_method, product.baseline_method, row.actual,
+        product.selected_method === "hist_gradient_boosting" ? row.model : row.baseline,
+        row.model, row.baseline].join(","));
+    }
+  }
+  return rows.join("\r\n") + "\r\n";
+}
+
 export function stockCover(forecast, onHand, days) {
   if (!Number.isSafeInteger(onHand) || onHand < 0 ||
       !Number.isSafeInteger(days) || days < 1 || days > 7 ||
