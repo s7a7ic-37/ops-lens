@@ -154,7 +154,7 @@ function renderForecast() {
     "evaluation-chart",
     product.evaluation,
     [
-      { key: "actual", label: "Observed orders", colour: "var(--series-actual,#172b49)" },
+      { key: "actual", label: "Observed units", colour: "var(--series-actual,#172b49)" },
       { key: "model", label: "Gradient boosting", colour: "var(--series-model,#7765b6)" },
       {
         key: "baseline",

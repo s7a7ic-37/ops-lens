@@ -1,6 +1,6 @@
 # OpsLens
 
-A retail data workbench for investigating invoice exceptions and comparing weekly order forecasts.
+A retail data workbench for investigating invoice exceptions and comparing forecasts of daily ordered units.
 
 **[Workbench](https://opslens.artemislab.co.uk/)** · **[Model card](MODEL_CARD.md)**
 
