@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   forecastCsv,
   holdoutCsv,
@@ -7,6 +8,44 @@ import {
   sortProductsBySelectedError,
   stockCover,
 } from "./helpers.mjs";
+
+test("committed holdout export reconciles with product and cohort scores", () => {
+  const report = JSON.parse(readFileSync(new URL("./report.json", import.meta.url), "utf8"));
+  const rows = holdoutCsv(report.products).trim().split("\r\n").slice(1).map(line => {
+    const [date, sku, selectedMethod, baselineMethod, ...values] = line.split(",");
+    return {date, sku, selectedMethod, baselineMethod, values: values.map(Number)};
+  });
+  assert.equal(new Set(report.products.map(product => product.sku)).size, report.products.length);
+  for (const product of report.products) {
+    const daily = rows.filter(row => row.sku === product.sku);
+    assert.equal(daily.length, 28);
+    assert.equal(daily[0].date, report.dataset.holdout_from);
+    assert.equal(daily.at(-1).date, report.dataset.holdout_through);
+    const baseline = ["seasonal_naive", "weekday_mean_4w"].sort((a, b) => product.validation[a].mae - product.validation[b].mae)[0];
+    const selected = product.validation.hist_gradient_boosting.mae < product.validation[baseline].mae ? "hist_gradient_boosting" : baseline;
+    assert.equal(product.baseline_method, baseline);
+    assert.equal(product.selected_method, selected);
+    const actual = daily.reduce((sum, row) => sum + row.values[0], 0);
+    for (let i = 0; i < daily.length; i++) {
+      assert.equal(daily[i].selectedMethod, selected);
+      assert.equal(daily[i].baselineMethod, baseline);
+      assert.equal(daily[i].values[1], daily[i].values[selected === "hist_gradient_boosting" ? 2 : 3]);
+      if (i) assert.equal(Date.parse(daily[i].date) - Date.parse(daily[i - 1].date), 86400000);
+    }
+    for (const [method, column] of [["hist_gradient_boosting", 2], [baseline, 3]]) {
+      const error = daily.reduce((sum, row) => sum + Math.abs(row.values[0] - row.values[column]), 0);
+      // Export rounds daily predictions to two decimals; product scores use full precision.
+      assert.ok(Math.abs(error / daily.length - product.holdout[method].mae) <= 0.0056);
+      assert.ok(Math.abs(100 * error / actual - product.holdout[method].wape) <= 100 * 0.005 * daily.length / actual + 0.0051);
+    }
+  }
+  const actual = rows.reduce((sum, row) => sum + row.values[0], 0);
+  for (const [method, column] of [["selected", 1], ["hist_gradient_boosting", 2], ["best_simple", 3]]) {
+    const error = rows.reduce((sum, row) => sum + Math.abs(row.values[0] - row.values[column]), 0);
+    assert.equal(Number((error / rows.length).toFixed(3)), report.summary.holdout[method].mae);
+    assert.equal(Number((100 * error / actual).toFixed(2)), report.summary.holdout[method].wape);
+  }
+});
 
 test("holdout CSV retains every product and its validation-selected method", () => {
   const product = {sku: "23166", selected_method: "hist_gradient_boosting", baseline_method: "seasonal_naive",

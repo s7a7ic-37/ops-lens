@@ -45,6 +45,8 @@ On macOS/Linux, use `.venv/bin/python`. The workbook checksum is pinned. Raw sou
 
 The report audits 541,909 source lines and evaluates eight product series. Methods are selected on validation data before holdout evaluation. Selected-policy holdout WAPE is 74.00%, compared with 93.31% for the validation-selected simple baselines. Both errors are large; WAPE measures error, not accuracy.
 
+CI independently recomputes holdout errors from the exported rows and checks the committed scores, dates and validation choices. Per-product comparisons allow for the export's two-decimal prediction rounding.
+
 This is a historical study, not a live inventory or purchasing service. Cancellation proxies are not matched returns. See the [model card](MODEL_CARD.md) for exclusions, time splits and individual results.
 
 ## Data and licence
