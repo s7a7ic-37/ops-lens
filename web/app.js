@@ -344,6 +344,9 @@ function renderReport() {
     "Investigation candidates, not verified return rates.",
   );
   renderProductOptions();
+  const requestedSku = new URL(window.location.href).searchParams.get("sku");
+  if (report.products.some(product => product.sku === requestedSku))
+    $("product").value = requestedSku;
   table(
     "audit-table",
     ["Classification", "Invoice lines"],
@@ -400,7 +403,12 @@ async function load() {
     document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
   }
 }
-$("product").addEventListener("change", renderForecast);
+$("product").addEventListener("change", () => {
+  renderForecast();
+  const url = new URL(window.location.href);
+  url.searchParams.set("sku", $("product").value);
+  window.history.replaceState(null, "", url);
+});
 $("product-order").addEventListener("change", renderProductOptions);
 $("stock-form").addEventListener("input", clearStockCover);
 $("stock-form").addEventListener("submit", (event) => {
