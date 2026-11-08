@@ -11,6 +11,7 @@ A retail data workbench for investigating invoice exceptions and comparing forec
 - A hypothetical stock-cover scenario using one to seven days of the selected historical forecast; shows rounded forecast units, the modelled gap and first shortfall date. It does not place orders or represent live inventory.
 - Eight-product forecast comparison using simple baselines and gradient boosting.
 - Export all observed holdout units and model, baseline and selected predictions as CSV. Rows preserve the earlier validation choices; displayed predictions are rounded, so recomputed errors can differ slightly from full-precision scores.
+- Order the product selector by the validation-selected method's holdout WAPE to inspect larger errors first.
 - Time-based validation and holdout results, with numeric alternatives to charts.
 
 Built with Python, DuckDB SQL, pandas and scikit-learn. The HTML/CSS/JavaScript dashboard reads a precomputed report; there are no accounts or uploads.

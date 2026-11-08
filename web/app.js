@@ -1,4 +1,11 @@
-import { methodNames, forecastCsv, holdoutCsv, cohortComparison, stockCover } from "./helpers.mjs";
+import {
+  methodNames,
+  forecastCsv,
+  holdoutCsv,
+  cohortComparison,
+  sortProductsBySelectedError,
+  stockCover,
+} from "./helpers.mjs";
 
 const $ = (id) => document.getElementById(id);
 const number = (value) =>
@@ -235,6 +242,23 @@ function renderForecast() {
   );
 }
 
+function renderProductOptions() {
+  const selected = $("product").value;
+  const products =
+    $("product-order").value === "error"
+      ? sortProductsBySelectedError(report.products)
+      : report.products;
+  $("product").replaceChildren(
+    ...products.map((product) => {
+      const option = element("option", `${product.sku} · ${product.name}`);
+      option.value = product.sku;
+      return option;
+    }),
+  );
+  if (products.some((product) => product.sku === selected))
+    $("product").value = selected;
+}
+
 function renderReport() {
   const { dataset: d, quality: q, summary: s } = report;
   $("period").textContent = `${date(d.from)} 2010 – ${date(d.through)} 2011`;
@@ -319,13 +343,7 @@ function renderReport() {
     ]),
     "Investigation candidates, not verified return rates.",
   );
-  $("product").replaceChildren(
-    ...report.products.map((product) => {
-      const option = element("option", `${product.sku} · ${product.name}`);
-      option.value = product.sku;
-      return option;
-    }),
-  );
+  renderProductOptions();
   table(
     "audit-table",
     ["Classification", "Invoice lines"],
@@ -383,6 +401,7 @@ async function load() {
   }
 }
 $("product").addEventListener("change", renderForecast);
+$("product-order").addEventListener("change", renderProductOptions);
 $("stock-form").addEventListener("input", clearStockCover);
 $("stock-form").addEventListener("submit", (event) => {
   event.preventDefault();

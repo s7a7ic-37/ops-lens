@@ -109,8 +109,19 @@
             <button id="download-holdout" type="button">Export all holdout rows ↓</button>
           </div>
           <div class="panel" id="product-detail">
-            <label for="product">Investigate a product</label
-            ><select id="product"></select>
+            <div class="product-controls">
+              <div>
+                <label for="product">Investigate a product</label>
+                <select id="product"></select>
+              </div>
+              <div>
+                <label for="product-order">Product order</label>
+                <select id="product-order">
+                  <option value="cohort">Cohort order</option>
+                  <option value="error">Selected-method WAPE · high to low</option>
+                </select>
+              </div>
+            </div>
             <div class="forecast-heading">
               <div>
                 <span id="sku" class="eyebrow"></span>

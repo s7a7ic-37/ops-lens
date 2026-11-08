@@ -352,6 +352,14 @@ select {
   color: inherit;
   font-size: 13px;
 }
+.product-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
+.product-controls > div {
+  flex: 1 1 240px;
+}
 details {
   font-size: 12px;
   margin-top: 12px;

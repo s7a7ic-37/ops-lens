@@ -19,6 +19,16 @@ export function cohortComparison(products) {
   });
 }
 
+export function sortProductsBySelectedError(products) {
+  return [...products].sort((a, b) => {
+    const aError = a.holdout[a.selected_method].wape;
+    const bError = b.holdout[b.selected_method].wape;
+    if (aError === null) return bError === null ? 0 : 1;
+    if (bError === null) return -1;
+    return bError - aError;
+  });
+}
+
 export function forecastCsv(product) {
   if (
     !/^[A-Z0-9]+$/.test(product.sku) ||

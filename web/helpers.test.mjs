@@ -1,6 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { forecastCsv, holdoutCsv, cohortComparison, stockCover } from "./helpers.mjs";
+import {
+  forecastCsv,
+  holdoutCsv,
+  cohortComparison,
+  sortProductsBySelectedError,
+  stockCover,
+} from "./helpers.mjs";
 
 test("holdout CSV retains every product and its validation-selected method", () => {
   const product = {sku: "23166", selected_method: "hist_gradient_boosting", baseline_method: "seasonal_naive",
@@ -38,6 +44,17 @@ test("cohort comparison keeps the validation choice even when ML loses on holdou
   });
   assert.equal(cohortComparison([{ ...product, selected_method: "seasonal_naive" }])[0].change, 0);
   assert.equal(cohortComparison([{ ...product, holdout: { ...product.holdout, seasonal_naive: { wape: null } } }])[0].change, null);
+});
+
+test("product picker can put the largest selected-method holdout errors first", () => {
+  const products = [
+    {sku: "A", selected_method: "hist_gradient_boosting", holdout: {hist_gradient_boosting: {wape: 60}, seasonal_naive: {wape: 10}}},
+    {sku: "B", selected_method: "seasonal_naive", holdout: {hist_gradient_boosting: {wape: 0}, seasonal_naive: {wape: 60}}},
+    {sku: "C", selected_method: "weekday_mean_4w", holdout: {weekday_mean_4w: {wape: 90}}},
+    {sku: "D", selected_method: "seasonal_naive", holdout: {seasonal_naive: {wape: null}}},
+  ];
+  assert.deepEqual(sortProductsBySelectedError(products).map(({sku}) => sku), ["C", "A", "B", "D"]);
+  assert.deepEqual(products.map(({sku}) => sku), ["A", "B", "C", "D"]);
 });
 
 test("export preserves forecast values and excludes product descriptions", () => {
