@@ -10,6 +10,8 @@ import {
 const $ = (id) => document.getElementById(id);
 const number = (value) =>
   new Intl.NumberFormat("en-GB", { maximumFractionDigits: 1 }).format(value);
+const dailyUnits = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 2 }).format;
+const stockUnits = (value) => `${number(value)} ${value === 1 ? "unit" : "units"}`;
 const percent = (value) =>
   value === null ? "N/A (zero observed units)" : `${number(value)}%`;
 const date = (value) =>
@@ -189,7 +191,7 @@ function renderForecast() {
       number(product.holdout[method].mae),
       percent(product.holdout[method].wape),
     ]),
-    "Validation selects the method; holdout measures later performance. Error units: units per day.",
+    "Validation selects the method. Holdout measures later performance. MAE is in units per day. WAPE is a percentage.",
   );
   table(
     "evaluation-table",
@@ -201,9 +203,9 @@ function renderForecast() {
     ],
     product.evaluation.map((row) => [
       date(row.date),
-      number(row.actual),
-      number(row.model),
-      number(row.baseline),
+      dailyUnits(row.actual),
+      dailyUnits(row.model),
+      dailyUnits(row.baseline),
     ]),
     "Exact daily holdout chart values, in units.",
   );
@@ -234,9 +236,9 @@ function renderForecast() {
     ["Date (2011)", "Forecast units", "Lower range", "Upper range"],
     product.forecast.map((row) => [
       date(row.date),
-      number(row.selected),
-      number(row.lower),
-      number(row.upper),
+      dailyUnits(row.selected),
+      dailyUnits(row.lower),
+      dailyUnits(row.upper),
     ]),
     "Selected method, refitted using all observations through 8 Dec 2011.",
   );
@@ -418,8 +420,8 @@ $("stock-form").addEventListener("submit", (event) => {
   try {
     const result = stockCover(product.forecast, $("stock-on-hand").valueAsNumber, $("cover-days").valueAsNumber);
     $("stock-result").replaceChildren(...[
-      ["Forecast units", number(result.forecastUnits) + " units"],
-      ["Modelled gap", number(result.topUpUnits) + " units"],
+      ["Forecast units", stockUnits(result.forecastUnits)],
+      ["Modelled gap", stockUnits(result.topUpUnits)],
       ["First shortfall", result.shortageDate ? date(result.shortageDate) + " 2011" : "None"],
     ].map(([label, value]) => {
       const card = element("p");
