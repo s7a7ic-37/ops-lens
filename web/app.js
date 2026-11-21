@@ -36,7 +36,7 @@ function element(tag, text, className) {
   return node;
 }
 
-function table(target, headers, rows, caption) {
+function table(target, headers, rows, caption, { rowHeader = false } = {}) {
   const result = element("table");
   const title = element("caption", caption);
   title.style.cssText =
@@ -54,7 +54,12 @@ function table(target, headers, rows, caption) {
   const body = element("tbody");
   rows.forEach((row) => {
     const tr = element("tr");
-    row.forEach((value) => tr.append(element("td", String(value))));
+    row.forEach((value, index) => {
+      const isHeader = rowHeader && index === 0;
+      const cell = element(isHeader ? "th" : "td", String(value));
+      if (isHeader) cell.scope = "row";
+      tr.append(cell);
+    });
     body.append(tr);
   });
   result.append(body);
@@ -192,6 +197,7 @@ function renderForecast() {
       percent(product.holdout[method].wape),
     ]),
     "Validation selects the method. Holdout measures later performance. MAE is in units per day. WAPE is a percentage.",
+    { rowHeader: true },
   );
   table(
     "evaluation-table",
@@ -309,6 +315,7 @@ function renderReport() {
       row.change === null ? "N/A" : number(row.change),
     ]),
     `All ${report.products.length} products on the untouched holdout. Negative change means less error; positive means more. Methods remain selected by earlier validation, never by this table.`,
+    { rowHeader: true },
   );
   chart(
     "weekly-chart",

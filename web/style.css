@@ -306,7 +306,7 @@ td:first-child,
 th:first-child {
   padding-left: 0;
 }
-tr:last-child td {
+tr:last-child > :is(td, th[scope="row"]) {
   border-bottom: 0;
 }
 .table-wrap {
@@ -519,10 +519,24 @@ footer p {
   #watchlist table, #comparison table, #evaluation-table table { min-width: 560px; }
   #cohort-table table { min-width: 850px; }
   #future-table table, #weekly-table table { min-width: 420px; }
+  :is(#cohort-table, #comparison) table { table-layout: fixed; }
+  :is(#cohort-table, #comparison) :is(th, td) { overflow-wrap: anywhere; }
+  #cohort-table thead th:first-child { width: 3rem; }
+  #cohort-table thead th:nth-last-child(-n + 2) { width: 5.625rem; }
+  #comparison thead th:first-child { width: 7rem; }
+  #comparison thead th:nth-last-child(-n + 2) { width: 3.875rem; }
+  :is(#cohort-table, #comparison) tr > :first-child {
+    position: sticky;
+    inset-inline-start: 0;
+    z-index: 1;
+    background: var(--surface,#fff);
+    box-shadow: 1px 0 var(--line);
+  }
   th,
   td {
     padding: 10px 8px;
   }
+  #comparison tr > :nth-last-child(-n + 2) { padding-inline: 6px; }
   h1 {
     letter-spacing: -1px;
   }
@@ -554,7 +568,8 @@ footer > a { display: inline-flex; align-items: center; min-height: 44px; }
 .panel { box-shadow: 0 3px 12px #172b4904; }
 @media(max-width:800px) { .topbar { padding-left: 22px; padding-right: 22px; } }
 
-td { font-family: Consolas,"Courier New",monospace; font-size: 12px; }
+td, tbody th[scope="row"] { font-family: Consolas,"Courier New",monospace; font-size: 12px; }
+tbody th[scope="row"] { color: inherit; text-transform: none; letter-spacing: 0; }
 .panel { box-shadow: none; }
 .metrics { border-bottom: 3px solid #172b49; }
 .dataset strong { margin: 4px 0; }
